@@ -383,12 +383,15 @@ for q in questions:
  if q['kind']=='numeric' and q['id'] not in ['SQ10-2','SQ16-2','SQ18-1','SQ19-1','SQ24-1']:
   op=q['numeric']['calculation'];rows=c['rows'];selected=rows
   if 'where' in op:selected=[r for r in rows if r[op['where']['column']]==op['where']['value']]
-  q['steps']=['관찰 기준: '+c['scenario'],'사용한 자료: '+str(selected),q['explanation']+' 단위는 '+q['numeric']['unit']+'입니다.']
+  readable=' / '.join(f"{i+1}행: "+', '.join(f'{key}={value}' for key,value in row.items()) for i,row in enumerate(selected))
+  q['steps']=['관찰 기준: '+c['scenario'],'계산에 포함한 행: '+readable,q['explanation']+' 단위는 '+q['numeric']['unit']+'입니다.']
  # 실수 유형은 실제 요구한 판단에 맞춘다.
  if q['kind']!='numeric':q['mistake']='코드' if c['kind']=='code' else '과도한 해석' if q['kind']=='essay' else '개념'
 for n,notes in {10:['일반 파일 유형, 소유자·그룹과 rw-r----- 모드를 읽습니다.','세 묶음의 4·2·1 가중치로 6·4·0을 계산합니다.'],11:['일반 뷰의 이름을 선언합니다.','원본에서 공개할 이름·학과 열만 선택합니다.','portal 계정에 뷰 조회 권한을 부여합니다.'],13:['선언된 필드 순서는 클라이언트·서버·HTTP상태·하위상태·Win32상태·처리시간(ms)입니다.'],26:['요청이 로컬 프록시를 거쳐 테스트 서버로 전달됩니다.','Disallow는 수집 지침이며 접근 거부가 아닙니다.']}.items():
  cases[n-1]['codeNotes']=notes
 # 실행 가능한 예제는 독립 검산 스크립트로 실제 출력을 검증한다.
+lessons[21]['codeKind']='python'
+lessons[21]['codeNotes']=['첫 줄은 SQL 구조를 고정하고 물음표를 값 위치로 둡니다.','두 번째 줄은 user_input을 한 개의 값으로 바인딩하고 결과 행을 읽습니다. 쉼표가 있는 한 원소 튜플을 사용합니다.','주석은 입력의 처리 경계를 요약합니다. 입력이 값으로 처리되어도 객체 권한 검사는 별도로 필요합니다.']
 lessons[7]['microLab']=dict(kind='권한 가중치 계산 · Python',code="mode = 'rw-r-----'\nweights = (4, 2, 1)\ndigits = [sum(w for ch, w in zip(mode[i:i+3], weights) if ch != '-') for i in (0, 3, 6)]\nprint(''.join(map(str, digits)))",output='640',notes=['아홉 권한 문자를 입력합니다.','각 묶음의 r·w·x 가중치입니다.','세 문자마다 허용된 가중치를 더합니다.','각 자리를 연결하면 640입니다.'])
 lessons[21]['microLab']=dict(kind='값 바인딩 · Python/SQLite',code="import sqlite3\ndb = sqlite3.connect(':memory:')\ndb.executescript(\"CREATE TABLE posts(id INTEGER,title TEXT); INSERT INTO posts VALUES(1,'notice'),(2,'private');\")\nvalue = '1 OR 1=1'\nunsafe = db.execute('SELECT title FROM posts WHERE id = ' + value).fetchall()\nsafe = db.execute('SELECT title FROM posts WHERE id = ?', (value,)).fetchall()\nprint(len(unsafe), len(safe))",output='2 0',notes=['표준 SQLite 모듈을 가져옵니다.','메모리 내부 DB만 사용합니다.','가상 테이블과 두 행을 만듭니다.','공격 형태의 문자열을 데이터로 준비합니다.','결합한 문자열은 SQL 문법으로 해석됩니다.','바인딩하면 같은 문자열이 값으로만 비교됩니다.','두 조회 결과의 행 수를 출력합니다.'])
 # 정답 위치는 회차·문항 ID와 별개로 기본 보기에서도 분산한다.
