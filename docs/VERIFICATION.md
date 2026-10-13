@@ -64,6 +64,8 @@ Codex 앱 내 Chromium 브라우저에서 로컬 production 미리보기로 확�
 
 첫 Linux Actions 브라우저 실행에서 320px SL06의 긴 계정·경로 설명이 33px 넘치는 현상을 발견했습니다. 플랫폼별 글꼴 폭 차이를 수용하도록 본문의 긴 문자열 줄바꿈과 강의 카드 최소 폭을 수정했습니다. 배포는 재검사 통과 후 진행합니다.
 
+수정 후 Linux Chromium에서도 4개 폭·400경로·자료·백업 검사가 통과했습니다. Pages 환경의 초기 main 전용 배포 규칙 때문에 작업 브랜치의 첫 배포가 거부되어 요청한 `codex/computer-security-cbt`를 허용 목록에 추가했습니다.
+
 ## 빌드와 보존
 
 TypeScript `tsc -b` 및 Vite production 빌드 통과. 기존 빅데이터 저장소는 작업 전후 clean, HEAD `763430ac560ca70cb7852b1fa012abd9916c4b9d` 유지. 기존 브라우저 계정·기록은 읽거나 변경하지 않았습니다.

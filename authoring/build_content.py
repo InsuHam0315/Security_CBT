@@ -410,5 +410,5 @@ assert len(lessons)==24 and len(cases)==32 and len(questions)==160
 assert all(len(c['questionIds'])==5 for c in cases)
 assert set(sum(round_cases,[]))==set(range(1,33))
 for name,data in [('sources',sources),('topics',topics),('lessons',lessons),('cases',cases),('questions',questions),('blueprints',blueprints)]:
- (OUT/(name+'.json')).write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
+ (OUT/(name+'.json')).write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n',encoding='utf8',newline='\n')
 print(f'{len(lessons)} lessons / {len(cases)} cases / {len(questions)} unique questions / 250 round slots / 90 repeated slots')

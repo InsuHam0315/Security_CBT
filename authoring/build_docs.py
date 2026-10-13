@@ -17,7 +17,7 @@ for s in sources:
   matching=lambda items:[i['id'] for i in items if any(r['sourceId']==s['id'] and page in r['pages'] for r in i['sources'])]
   lines.append('| '+str(page)+' | '+' | '.join(', '.join(matching(items)) or '—' for items in [lessons,cases,questions])+' |')
 lines+=['','## 교재 연습문제','','교재: 양대일, 『정보 보안 개론』 4판, 한빛아카데미, ISBN 9791156645443. [출판사](https://www.hanbit.co.kr/books/B8742050283?code=B8742050283)는 공식 연습문제 해답을 제공하지 않는다고 안내합니다.','','인터넷에서 발견한 제3자 게시물: [1장](https://greencloud.tistory.com/99), [2장](https://aengdoo25.tistory.com/3), [3장](https://aengdoo25.tistory.com/2), [4장](https://aengdoo25.tistory.com/1). 1장은 판본 미표기, 2~4장은 제목에 개정4판 표기. 책의 원문·번호·정답과 일치하는지는 미검증입니다. 전체를 복제해 콘텐츠에 넣지 않았습니다. 직접 작성한 예상문제와 교재 복습 체크리스트를 분리합니다. 실제 족보는 아직 제공되지 않았습니다.']
-(docs/'SOURCES.md').write_text('\n'.join(lines)+'\n',encoding='utf8')
+(docs/'SOURCES.md').write_text('\n'.join(lines)+'\n',encoding='utf8',newline='\n')
 lines=['# 시험 범위와 콘텐츠 커버리지','','사용자 확인 범위: 1~4장 전체. 교수자의 공지·실제 시험 규격은 미확인. 5장 이후 독립 강의를 추가하지 않았습니다. 소개 수준의 암호·서명·프로토콜은 1~4장에서 다룬 수준에 맞춥니다.','','| 범위 | 강의 | 사례 | 고유 문항 |','|---|---:|---:|---:|']
 for t in topics:lines.append(f"| {t['title']} | {sum(l['topic']==t['id'] for l in lessons)} | {sum(c['topic']==t['id'] for c in cases)} | {sum(q['topic']==t['id'] for q in questions)} |")
 lines+=['','각 사례는 직접 만든 가상 자료이며 5문항을 공유합니다. 이름·숫자만 바꾼 복제 사례를 만들지 않았습니다.','','| 강의 | 제목 | 사례 | 고유 문항 | 근거 슬라이드 |','|---|---|---|---|---|']
@@ -35,4 +35,4 @@ lines+=['','250개 출제 슬롯 = 160개 고유 문항 + 90번의 회차 간 �
 for i,a in enumerate(rounds):
  for j in range(i+1,len(rounds)):lines.append(f"| {a['id']} / {rounds[j]['id']} | {len(sets[i]&sets[j])} |")
 lines+=['','두 회차의 공유 개수를 모두 더한 값은 90번의 추가 출제 횟수와 다른 집계입니다. 세 회차 이상에 쓰인 문항은 조합마다 계산됩니다.','', '문항 형식: '+', '.join(f'{k} {v}' for k,v in Counter(q['kind'] for q in questions).items())+'.','', '강의·개별 사례·오답·북마크의 집중 복습은 종합 회차와 별도 준비 화면으로 이동합니다. 향후 실제 기출은 출처를 확인해 별도 컬렉션으로 추가하며 현재 예상문제의 출처 표시를 바꾸지 않습니다.']
-(docs/'COVERAGE.md').write_text('\n'.join(lines)+'\n',encoding='utf8')
+(docs/'COVERAGE.md').write_text('\n'.join(lines)+'\n',encoding='utf8',newline='\n')
