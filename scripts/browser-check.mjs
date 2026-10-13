@@ -20,7 +20,7 @@ try{
   for(const path of paths){
    await page.goto(base+path);await page.getByRole('main').waitFor();await page.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r))));
    const text=await page.getByRole('main').innerText();assert(text.length>30&&!text.includes('페이지를 찾을 수 없습니다.')&&!text.includes('자료를 찾을 수 없습니다.'),path);
-   const extra=await page.evaluate(()=>document.documentElement.scrollWidth-document.documentElement.clientWidth);maximum=Math.max(maximum,extra);assert(extra<=1,`${width}px ${path} overflow ${extra}`);
+   const extra=await page.evaluate(()=>document.documentElement.scrollWidth-document.documentElement.clientWidth);maximum=Math.max(maximum,extra);if(extra>1)console.log('OVERFLOW',await page.locator('main *').evaluateAll(els=>els.filter(e=>e.getBoundingClientRect().right>document.documentElement.clientWidth).slice(0,12).map(e=>({tag:e.tagName,cls:e.className,text:e.textContent.slice(0,90),right:e.getBoundingClientRect().right}))));assert(extra<=1,`${width}px ${path} overflow ${extra}`);
   }
   report.viewports.push({width,routes:paths.length,maxOverflow:maximum});
   await page.goto(base+'#/account');if(width<=760)await page.getByRole('button',{name:'메뉴 열기',exact:true}).click();await page.getByRole('link',{name:'로컬 회원가입',exact:true}).click();await page.getByRole('button',{name:'회원가입',exact:true}).and(page.locator('[aria-pressed="true"]')).waitFor();if(width<=760)await page.getByRole('button',{name:'메뉴 열기',exact:true}).click();await page.getByRole('link',{name:'로컬 로그인·프로필',exact:true}).click();await page.getByRole('button',{name:'로그인',exact:true}).and(page.locator('[aria-pressed="true"]')).waitFor();

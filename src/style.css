@@ -17,6 +17,7 @@
   --header: rgba(12, 18, 32, 0.82);
   font-synthesis: none;
   line-height: 1.7;
+  overflow-wrap: anywhere;
   font-size: 17px;
   background: var(--bg);
   color: var(--text);
@@ -1064,6 +1065,7 @@ progress::-moz-progress-bar {
   gap: 25px;
 }
 .lesson-article {
+  min-width: 0;
   padding: 36px 40px;
   font-size: 18px;
   line-height: 2;
