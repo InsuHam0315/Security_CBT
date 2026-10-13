@@ -1,0 +1,20 @@
+import { Link, useLocation } from "react-router-dom";
+import { sources, topics, lessons, cases, questions } from "../content";
+import { Heading } from "../components/UI";
+import { useStudy } from "../context";
+import { updateProfile } from "../storage";
+const links=["https://greencloud.tistory.com/99","https://aengdoo25.tistory.com/3","https://aengdoo25.tistory.com/2","https://aengdoo25.tistory.com/1"];
+export function Textbook(){
+ const {profile,session,run}=useStudy();
+ return <><Heading eyebrow="TEXTBOOK EXERCISES" title="교재 1~4장 연습문제 복습" description="특정 번호가 지정되지 않았으므로 네 장의 연습문제 전체를 복습 대상으로 둡니다."/>
+ <section className="panel"><h2>정보 보안 개론 · 4판</h2><p>양대일 · 한빛아카데미 · ISBN 9791156645443</p><p><a href="https://www.hanbit.co.kr/books/B8742050283?code=B8742050283" target="_blank" rel="noreferrer">출판사 교재 안내 ↗</a></p><p>출판사는 공식 연습문제 해답을 제공하지 않는다고 안내합니다. 아래는 인터넷에서 확인한 제3자 게시물로, 책과의 일치와 답안 정확성을 대조해야 합니다. 이 사이트의 예상문제는 교재 원문이 아닙니다.</p></section>
+ <div className="case-grid">{topics.map((t,i)=><section className="panel" key={t.id}><span className="tag">{i+1}장</span><h2>{t.title.slice(3)}</h2><p>{t.subtitle}</p><a className="button" href={links[i]} target="_blank" rel="noreferrer">공개 연습문제 게시물 ↗</a><p className="muted">{i===0?"게시물에 판본 미표기 · 4판 일치 미확인":"게시물 제목에 개정4판 표기 · 공식 원문 대조 미완료"}</p><label className="checkbox-label"><input type="checkbox" checked={profile.textbookChecks.includes(t.id)} onChange={()=>void run(updateProfile(session.userId,p=>{p.textbookChecks=p.textbookChecks.includes(t.id)?p.textbookChecks.filter(x=>x!==t.id):[...p.textbookChecks,t.id];}))}/>책의 해당 장 연습문제를 직접 복습했어요</label><Link className="button" to={`/lessons?topic=${t.id}`}>연결 강의 보기</Link></section>)}</div>
+ <section className="panel"><h2>원문을 풀 때 확인할 것</h2><ol><li>책의 장과 문제 번호를 공개 게시물과 대조합니다.</li><li>답을 가린 채 풀고 강의의 개념·조건·슬라이드로 근거를 설명합니다.</li><li>블로그 답과 강의 설명이 다르면 조건과 보완 자료를 확인합니다.</li><li>계정 로그인 가능 여부·포트·로그 필드·단순화된 권한 규칙에 주의합니다.</li></ol><p>실제 시험 족보는 자료를 받은 뒤 별도 문제집으로 만들겠습니다. 현재 실제 기출이라고 표시한 문항은 없습니다.</p></section></>;
+}
+export function SourceGuide(){
+ const p=new URLSearchParams(useLocation().search),sid=p.get('source'),page=Number(p.get('page'));
+ return <><Heading eyebrow="SOURCE MAP" title="자료와 실제 슬라이드 출처" description="PPTX의 표시 순서(표지 포함, 1부터)입니다. 내부 XML 파일 번호나 책의 인쇄 쪽수와 다릅니다."/>
+ <section className="panel"><h2>확인한 자료</h2><p>Lecture 폴더에서 PPTX 4개를 확인했습니다. 강의계획서·시험 공지·별도 코드·PDF는 없었습니다. 총 248장을 텍스트와 렌더링으로 확인했습니다. 3·4장은 PowerPoint의 읽기 전용 복구 열기로 렌더링했고 원본은 수정하지 않았습니다.</p><p>원본 슬라이드와 추출 원문은 공개 저장소에 포함하지 않습니다. 출처를 로컬 원본과 대조하세요.</p>{sources.map(s=><div key={s.id} className="linked-case"><strong>{s.id} · {s.filename}</strong><span>{s.pages}슬라이드</span></div>)}</section>
+ {sid&&<section className="panel"><h2>{sources.find(s=>s.id===sid)?.filename} · 슬라이드 {page||'선택'}</h2><p>인용하는 콘텐츠:</p><div className="actions">{lessons.filter(l=>l.sources.some(r=>r.sourceId===sid&&(!page||r.pages.includes(page)))).map(l=><Link className="button" key={l.id} to={`/lessons/${l.id}`}>{l.id} · {l.title}</Link>)}</div><div className="actions">{cases.filter(c=>c.sources.some(r=>r.sourceId===sid&&(!page||r.pages.includes(page)))).map(c=><Link className="button" key={c.id} to={`/reading?case=${c.id}`}>{c.id} · {c.title}</Link>)}</div><p>연결 문항 {questions.filter(q=>q.sources.some(r=>r.sourceId===sid&&(!page||r.pages.includes(page)))).length}개</p></section>}
+ <section className="panel"><h2>수업 자료와 구분한 보완 설명</h2><ul><li>P2 13: x는 별도 비밀번호 저장 표시입니다. 로그인은 잠금·인증·서비스 정책도 확인합니다.</li><li>P2 20: XDMCP 6000 표기는 X11 서버 포트와 구분합니다. XDMCP는 UDP 177입니다.</li><li>P2 27: NTFS의 실제 유효 권한은 명시·상속 ACE와 순서를 함께 봅니다.</li><li>P2 49: W3C 로그는 #Fields 선언이 기준입니다. 200 0 0을 바이트 크기로 확정하지 않습니다.</li><li>P3 36: 지향 브로드캐스트는 프리픽스 기준입니다. 항상 .255가 아닙니다.</li><li>P3 76: EAP 방식마다 인증 과정이 다르므로 해시 전송 도식을 보편화하지 않습니다.</li><li>P4 52: 원 CSRF 예는 태그·따옴표가 일부 생략되어 있어 실행 코드로 복제하지 않았습니다.</li></ul><p>같은 주제의 이해에 필요한 보완만 추가하고 5장 이후의 독립 강의는 만들지 않았습니다.</p></section></>;
+}

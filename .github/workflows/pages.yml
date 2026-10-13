@@ -1,0 +1,54 @@
+name: Verify and deploy security study lab
+
+on:
+  push:
+    branches: [codex/computer-security-cbt]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: security-pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24.18.0'
+          cache: npm
+      - run: npm ci
+      - run: npm run validate
+      - run: npm test
+      - run: npm run verify:content
+      - run: npm run build
+      - run: npx playwright install --with-deps chromium
+      - name: Browser verification
+        run: |
+          npm run preview > /tmp/security-preview.log 2>&1 &
+          for i in {1..30}; do
+            if curl -sf http://127.0.0.1:4175/Security_CBT/ > /dev/null; then break; fi
+            sleep 1
+          done
+          npm run test:browser
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

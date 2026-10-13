@@ -1,0 +1,97 @@
+[
+  {
+    "id": "R1",
+    "title": "종합모의고사 1회차",
+    "description": "1~4장 혼합 · 보안 목표 5, 시스템 15, 네트워크 15, 웹 15문항. 공통 자료별 연속 배치.",
+    "caseIds": [
+      "SC01",
+      "SC05",
+      "SC09",
+      "SC12",
+      "SC15",
+      "SC18",
+      "SC21",
+      "SC25",
+      "SC27",
+      "SC30"
+    ],
+    "defaultCount": 50,
+    "defaultMinutes": 75
+  },
+  {
+    "id": "R2",
+    "title": "종합모의고사 2회차",
+    "description": "1~4장 혼합 · 보안 목표 5, 시스템 15, 네트워크 15, 웹 15문항. 공통 자료별 연속 배치.",
+    "caseIds": [
+      "SC02",
+      "SC06",
+      "SC10",
+      "SC13",
+      "SC16",
+      "SC19",
+      "SC22",
+      "SC26",
+      "SC28",
+      "SC31"
+    ],
+    "defaultCount": 50,
+    "defaultMinutes": 75
+  },
+  {
+    "id": "R3",
+    "title": "종합모의고사 3회차",
+    "description": "1~4장 혼합 · 보안 목표 5, 시스템 15, 네트워크 15, 웹 15문항. 공통 자료별 연속 배치.",
+    "caseIds": [
+      "SC03",
+      "SC07",
+      "SC11",
+      "SC14",
+      "SC17",
+      "SC20",
+      "SC24",
+      "SC27",
+      "SC29",
+      "SC32"
+    ],
+    "defaultCount": 50,
+    "defaultMinutes": 75
+  },
+  {
+    "id": "R4",
+    "title": "종합모의고사 4회차",
+    "description": "1~4장 혼합 · 보안 목표 5, 시스템 15, 네트워크 15, 웹 15문항. 공통 자료별 연속 배치.",
+    "caseIds": [
+      "SC04",
+      "SC05",
+      "SC08",
+      "SC11",
+      "SC15",
+      "SC22",
+      "SC23",
+      "SC25",
+      "SC28",
+      "SC31"
+    ],
+    "defaultCount": 50,
+    "defaultMinutes": 75
+  },
+  {
+    "id": "R5",
+    "title": "종합모의고사 5회차",
+    "description": "1~4장 혼합 · 보안 목표 5, 시스템 15, 네트워크 15, 웹 15문항. 공통 자료별 연속 배치.",
+    "caseIds": [
+      "SC01",
+      "SC07",
+      "SC10",
+      "SC14",
+      "SC17",
+      "SC19",
+      "SC24",
+      "SC26",
+      "SC29",
+      "SC30"
+    ],
+    "defaultCount": 50,
+    "defaultMinutes": 75
+  }
+]
