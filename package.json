@@ -9,6 +9,7 @@
     "preview": "vite preview --host 127.0.0.1 --port 4175 --strictPort",
     "test": "vitest run",
     "test:browser": "node scripts/browser-check.mjs",
+    "test:ime": "node scripts/ime-check.mjs",
     "verify:content": "python scripts/verify_content.py",
     "validate": "tsx scripts/validate.ts"
   },

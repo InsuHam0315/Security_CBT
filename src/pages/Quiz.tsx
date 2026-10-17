@@ -25,6 +25,7 @@ import {
   submitDraft,
 } from "../storage";
 import { Materials, Sources } from "../components/Materials";
+import { AnswerInput } from "../components/AnswerInput";
 export function answerText(q: Question, value: string | undefined) {
   return !value?.trim()
     ? "미응답"
@@ -127,13 +128,13 @@ export function Quiz() {
         ? null
         : Math.max(0, Math.ceil((draft.endsAt - now) / 1000));
   const patch = (fn: (d: ExamDraft) => void) =>
-    void run(patchDraft(draft.userId, draft.id, fn));
+    run(patchDraft(draft.userId, draft.id, fn));
   const setAnswer = (v: string) =>
     patch((d) => {
       d.answers[q.id] = v;
       d.checked = d.checked.filter((id) => id !== q.id);
       delete d.selfGrades[q.id];
-    });
+    }).then(saved => saved?.draft?.id === draft.id && saved.draft.answers[q.id] === v);
   const order = draft.choiceOrders[q.id] ?? q.choices?.map((c) => c.id) ?? [];
   const gradeSelf = (v: boolean) =>
     patch((d) => {
@@ -246,29 +247,8 @@ export function Quiz() {
                   : q.kind === "essay"
                     ? "근거와 해석 한계를 2~4문장으로 적어 보세요."
                     : "지정된 용어로 짧게 입력하세요."}
-                {q.kind === "essay" ? (
-                  <textarea
-                    aria-label="서술 답안"
-                    rows={6}
-                    maxLength={10000}
-                    value={answer}
-                    onChange={(e) => setAnswer(e.target.value)}
-                  />
-                ) : (
-                  <input
-                    aria-label={
-                      q.kind === "numeric" ? "숫자 답안" : "짧은 답안"
-                    }
-                    type="text"
-                    inputMode={q.kind === "numeric" ? "decimal" : "text"}
-                    maxLength={1000}
-                    value={answer}
-                    onChange={(e) => setAnswer(e.target.value)}
-                    placeholder={
-                      q.kind === "numeric" ? "숫자만 입력" : "답 입력"
-                    }
-                  />
-                )}
+                <AnswerInput key={`${draft.userId}:${draft.id}:${q.id}`}
+                  kind={q.kind} savedValue={answer} onSave={setAnswer} />
               </label>
             )}
             <div className="question-actions">
