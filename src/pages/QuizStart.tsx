@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, Navigate, useLocation, useNavigate, useParams } from "react-router-dom";
 import { ArrowRight, BookOpen, Timer } from "lucide-react";
-import { blueprints, caseMap, questionMap, questions } from "../content";
+import { blueprints, caseMap, questionMap, questions, topics } from "../content";
 import { useStudy } from "../context";
 import { newDraft, roundQuestions, selectQuestions } from "../engine";
 import { updateProfile } from "../storage";
@@ -75,13 +75,15 @@ export function FocusPracticeStart() {
   const [starting, setStarting] = useState(false);
   let pool = questions;
   const cid = params.get("case"), qid = params.get("question");
+  const chapter = topics.find(t=>t.id===params.get("topic"));
   const bookmarks = params.get("bookmarks") === "1", wrong = params.get("wrong") === "1";
   if (cid) pool = pool.filter((q) => q.caseId === cid);
   if (qid) pool = pool.filter((q) => q.id === qid);
+  if (chapter) pool = pool.filter(q=>q.topic===chapter.id);
   if (bookmarks) pool = pool.filter((q) => profile.bookmarks.some((b) => b.kind === "question" && b.targetId === q.id));
   if (wrong) pool = pool.filter((q) => profile.wrongNotes.some((w) => !w.resolved && w.questionId === q.id));
-  if (!cid && !qid && !bookmarks && !wrong) pool = [];
-  const title = bookmarks ? "북마크 문제 복습" : wrong ? "오답 다시 풀기" : qid ? "선택 문제 복습" : "자료 확인 문제";
+  if (!cid && !qid && !bookmarks && !wrong && !chapter) pool = [];
+  const title = bookmarks ? "북마크 문제 복습" : wrong ? "오답 다시 풀기" : qid ? "선택 문제 복습" : chapter ? `${chapter.title} · 예상문제 복습` : "자료 확인 문제";
   const ids = selectQuestions({pool, count: pool.length, random: false}).ids;
   const start = async () => {
     if (!ids.length || starting) return;

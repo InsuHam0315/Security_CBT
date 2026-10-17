@@ -18,6 +18,7 @@ export interface Lesson {
   id: string;
   topic: TopicId;
   title: string;
+  pptOutline: string;
   minutes: number;
   intro: string;
   prerequisiteIds: string[];
@@ -29,7 +30,15 @@ export interface Lesson {
   keyPoints: string[];
   tags: string[];
   objectives: string[];
-  sections: { heading: string; body: string[] }[];
+  sections: {
+    heading: string; body: string[]; sources: SourceRef[];
+    table?: { columns: string[]; rows: string[][] };
+    code?: string;
+  }[];
+  additionalSections: {
+    heading: string; body: string[];
+    links: { title: string; url: string }[];
+  }[];
   terms: string[][];
   code: string;
   codeNotes: string[];

@@ -55,10 +55,7 @@ export function SidebarNav() {
       </div>
       <div className="nav-children" id={`nav-${id}`} hidden={!open[id]}>
         {items.map(renderItem)}
-        {id === "lessons" && topics.map((t) => <div className="nav-topic" key={t.id}>
-          <Link className="nav-topic-title" to={`/lessons?topic=${t.id}`} aria-current={current(`/lessons?topic=${t.id}`, location.pathname, location.search) ? "page" : undefined}>{t.id} · {t.title}</Link>
-          {lessons.filter((l) => l.topic === t.id).map((l) => renderItem({label: `${l.id} · ${l.title}`, to: `/lessons/${l.id}`, completed: profile.progress.some((p) => p.lessonId === l.id && p.completed)}))}
-        </div>)}
+        {id === "lessons" && topics.map((t) => renderItem({label: t.title, to: `/lessons/chapter/${t.id}`, completed: lessons.filter(l=>l.topic===t.id).every(l=>profile.progress.some(p=>p.lessonId===l.id&&p.completed))}))}
       </div>
     </div>)}
   </nav>;

@@ -22,7 +22,25 @@ try{
    const text=await page.getByRole('main').innerText();assert(text.length>30&&!text.includes('페이지를 찾을 수 없습니다.')&&!text.includes('자료를 찾을 수 없습니다.'),path);
    const extra=await page.evaluate(()=>document.documentElement.scrollWidth-document.documentElement.clientWidth);maximum=Math.max(maximum,extra);if(extra>1)console.log('OVERFLOW',await page.locator('main *').evaluateAll(els=>els.filter(e=>e.getBoundingClientRect().right>document.documentElement.clientWidth).slice(0,12).map(e=>({tag:e.tagName,cls:e.className,text:e.textContent.slice(0,90),right:e.getBoundingClientRect().right}))));assert(extra<=1,`${width}px ${path} overflow ${extra}`);
   }
-  report.viewports.push({width,routes:paths.length,maxOverflow:maximum});
+  for(const topic of ['A','B','C','D']){
+   await page.goto(base+'#/lessons/chapter/'+topic);await page.locator('.chapter-article').waitFor();
+   const count=await page.locator('.ppt-section').count();assert(count>=28);
+   assert.equal(await page.locator('.chapter-article img').count(),0);
+   assert(await page.locator('#chapter-extras').isVisible());
+   if(width>760){
+    await page.getByRole('button',{name:'왼쪽 메뉴 접기',exact:true}).click();await page.locator('.app-shell.sidebar-closed').waitFor();
+    assert.equal(await page.locator('#study-sidebar').isVisible(),false);
+    assert((await page.locator('.main-wrap').boundingBox()).x===0);
+    await page.reload();await page.getByRole('button',{name:'왼쪽 메뉴 펼치기',exact:true}).click();await page.locator('.app-shell:not(.sidebar-closed)').waitFor();
+    assert(await page.locator('#study-sidebar').isVisible());
+   }
+  }
+  await page.goto(base+'#/practice?topic=A');await page.getByRole('heading',{name:'20문항 복습',exact:true}).waitFor();
+  await page.goto(base+'#/practice?topic=B');await page.getByRole('heading',{name:'50문항 복습',exact:true}).waitFor();
+  await page.goto(base+'#/lessons/SL18');await page.locator('[data-lesson-id=SL18]').waitFor();
+  assert.equal(await page.locator('.chapter-unit').count(),8);
+  await page.goto(base+'#/lessons');assert.equal(await page.locator('.chapter-card').count(),4);
+  report.viewports.push({width,routes:paths.length,maxOverflow:maximum,chapters:4,legacyLink:true,sidebarToggle:width>760});
   await page.goto(base+'#/account');if(width<=760)await page.getByRole('button',{name:'메뉴 열기',exact:true}).click();await page.getByRole('link',{name:'로컬 회원가입',exact:true}).click();await page.getByRole('button',{name:'회원가입',exact:true}).and(page.locator('[aria-pressed="true"]')).waitFor();if(width<=760)await page.getByRole('button',{name:'메뉴 열기',exact:true}).click();await page.getByRole('link',{name:'로컬 로그인·프로필',exact:true}).click();await page.getByRole('button',{name:'로그인',exact:true}).and(page.locator('[aria-pressed="true"]')).waitFor();
   await page.goto(base+'#/reading?case=SC13');await page.getByRole('button',{name:'time-taken',exact:true}).click();await page.getByRole('button',{name:'time-taken',exact:true}).click();assert.equal(await page.locator('th[aria-sort="descending"]').innerText(),'time-taken');
   await page.getByLabel('표 행 필터',{exact:true}).fill('403');assert.equal(await page.locator('tbody tr').count(),1);
@@ -35,9 +53,9 @@ try{
   const now=new Date().toISOString(),owned={userId:'fixture',createdAt:now,updatedAt:now};
   const data={app:'computer-security-cbt',schemaVersion:1,exportedAt:now,profile:{...owned,schemaVersion:1,textbookChecks:['B'],attempts:[],wrongNotes:[],progress:[{...owned,lessonId:'SL02',completed:true}],bookmarks:[],draft:null,settings:{theme:'light',shuffle:false},lastLessonId:'SL02'}};
   await page.locator('input[type=file]').setInputFiles({name:'valid.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(data))});await page.getByRole('button',{name:'현재 사용자에 합치기',exact:true}).waitFor();assert((await page.getByRole('main').innerText()).includes('진도 1개'));
-  await page.getByRole('button',{name:'현재 사용자에 합치기',exact:true}).click();await page.locator('.save-state').filter({hasText:'저장 상태 확인됨'}).waitFor({state:'attached'});await page.goto(base+'#/lessons/SL02');await page.getByRole('button',{name:'읽기 완료 해제',exact:true}).waitFor();
+  await page.getByRole('button',{name:'현재 사용자에 합치기',exact:true}).click();await page.locator('.save-state').filter({hasText:'저장 상태 확인됨'}).waitFor({state:'attached'});await page.goto(base+'#/lessons/SL02');await page.locator('[data-lesson-id=SL02]').getByRole('button',{name:'이 단원 읽기 완료 해제',exact:true}).waitFor();
   await page.goto(base+'#/account?view=backup');await page.getByLabel('복원 정책').selectOption('replace');data.profile.progress=[];
-  await page.locator('input[type=file]').setInputFiles({name:'replace.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(data))});await page.getByRole('button',{name:'현재 학습 기록 덮어쓰기',exact:true}).click();await page.locator('.save-state').filter({hasText:'저장 상태 확인됨'}).waitFor({state:'attached'});await page.goto(base+'#/lessons/SL02');await page.getByRole('button',{name:'읽기 완료',exact:true}).waitFor();
+  await page.locator('input[type=file]').setInputFiles({name:'replace.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(data))});await page.getByRole('button',{name:'현재 학습 기록 덮어쓰기',exact:true}).click();await page.locator('.save-state').filter({hasText:'저장 상태 확인됨'}).waitFor({state:'attached'});await page.goto(base+'#/lessons/SL02');await page.locator('[data-lesson-id=SL02]').getByRole('button',{name:'이 단원 읽기 완료',exact:true}).waitFor();
   report.backup.push({width,invalidRejected:true,preview:true,merge:true,replace:true});await context.close();
  }
  assert.deepEqual(report.errors,[]);console.log(JSON.stringify(report,null,2));

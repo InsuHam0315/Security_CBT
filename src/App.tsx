@@ -24,6 +24,8 @@ import {
   Layers,
   LogOut,
   Menu,
+  PanelLeftClose,
+  PanelLeftOpen,
   Moon,
   Sun,
   ShieldCheck,
@@ -49,7 +51,7 @@ import {
 } from "./storage";
 import { topicStats } from "./engine";
 import { Code, Materials, Sources } from "./components/Materials";
-import { LessonPrimer, WorkedExamples, LessonLab, LessonSelfChecks, LessonSummary } from "./components/LessonStudy";
+import { Classroom } from "./pages/Classroom";
 import { Auth, Records, WrongNotes } from "./pages/Records";
 import { Quiz, Results } from "./pages/Quiz";
 import { QuizStart, FocusPracticeStart } from "./pages/QuizStart";
@@ -70,6 +72,19 @@ function Shell() {
     setError,
   } = useStudy();
   const [mobile, setMobile] = useState(false);
+  const [sidebarClosed,setSidebarClosed] = useState(()=>{
+    try { return localStorage.getItem('computer-security-cbt:sidebar-closed') === 'true'; }
+    catch { return false; }
+  });
+  function closeSidebar() {
+    if (matchMedia('(max-width: 760px)').matches) { setMobile(false); return; }
+    setSidebarClosed(true);
+    requestAnimationFrame(()=>document.getElementById('sidebar-reopen')?.focus());
+  }
+  useEffect(()=>{
+    try { localStorage.setItem('computer-security-cbt:sidebar-closed',String(sidebarClosed)); }
+    catch { /* Navigation still works when browser storage is unavailable. */ }
+  },[sidebarClosed]);
   const location = useLocation();
   useEffect(() => {
     setMobile(false);
@@ -91,7 +106,7 @@ function Shell() {
     window.addEventListener('keydown',close);
     return ()=>{window.removeEventListener('keydown',close);previous?.focus();};
   }, [mobile]);
-  const completed = profile.progress.filter((p) => p.completed).length;
+  const completed = topics.filter(t=>lessons.filter(l=>l.topic===t.id).every(l=>profile.progress.some(p=>p.lessonId===l.id&&p.completed))).length;
   if (!ready)
     return (
       <div className="loading">
@@ -100,12 +115,13 @@ function Shell() {
       </div>
     );
   return (
-    <div className="app-shell">
+    <div className={`app-shell ${sidebarClosed ? 'sidebar-closed' : ''}`}>
       <a className="skip" href="#main">
         본문으로 건너뛰기
       </a>
       {mobile && <button className="sidebar-backdrop" aria-label="메뉴 닫기" onClick={() => setMobile(false)} />}
-      <aside className={`sidebar glass ${mobile ? "open" : ""}`}>
+      <aside id="study-sidebar" className={`sidebar glass ${mobile ? "open" : ""}`} inert={sidebarClosed && !mobile}>
+        <div className="sidebar-brand-row">
         <Link className="brand" to="/">
           <span className="brand-icon">
             <ShieldCheck size={22} />
@@ -114,16 +130,18 @@ function Shell() {
             컴퓨터보안 학습실<small>SECURITY STUDY LAB</small>
           </span>
         </Link>
+        <button className="sidebar-collapse icon-btn" title="왼쪽 메뉴 접기" aria-label="왼쪽 메뉴 접기" aria-expanded={mobile||!sidebarClosed} aria-controls="study-sidebar" onClick={closeSidebar}><PanelLeftClose size={19}/></button>
+        </div>
         <p className="sidebar-label">LEARN · READ · PRACTICE</p>
         <SidebarNav />
         <div className="sidebar-bottom">
           <div className="mini-progress">
             <span>강의 진행</span>
             <b>
-              {completed} / {lessons.length}
+              {completed} / 4장
             </b>
           </div>
-          <progress max={lessons.length} value={completed} />
+          <progress max={4} value={completed} />
           <p>증거를 읽고, 조건으로 답하기.</p>
           <Link to="/account">
             <CircleUserRound size={17} />
@@ -134,6 +152,7 @@ function Shell() {
       <div className="main-wrap">
         <header className="topbar glass">
           <div className="topbar-left">
+            {sidebarClosed && <button id="sidebar-reopen" className="desktop-menu icon-btn" title="왼쪽 메뉴 펼치기" aria-label="왼쪽 메뉴 펼치기" aria-expanded={false} aria-controls="study-sidebar" onClick={()=>{setSidebarClosed(false);requestAnimationFrame(()=>document.querySelector<HTMLButtonElement>('.sidebar-collapse')?.focus());}}><PanelLeftOpen size={21}/></button>}
             <button
               className="mobile-menu icon-btn"
               aria-label="메뉴 열기"
@@ -256,7 +275,7 @@ function Shell() {
 }
 function Home() {
   const { session, profile } = useStudy();
-  const complete = profile.progress.filter((p) => p.completed).length,
+  const complete = topics.filter(t=>lessons.filter(l=>l.topic===t.id).every(l=>profile.progress.some(p=>p.lessonId===l.id&&p.completed))).length,
     wrong = profile.wrongNotes.filter((w) => !w.resolved),
     recent = profile.attempts.at(-1);
   const stats = topicStats(profile.attempts);
@@ -279,7 +298,7 @@ function Home() {
           <h1>어디에서 신뢰하고,<br /><em>무엇을 검증할까요?</em></h1>
           <p>개념을 이해하고 권한·로그·통신 흐름에서 근거를 찾으세요.<br />교재 연습문제 복습과 종합 사례 풀이를 연결합니다.</p>
           <div className="actions"><Link className="button primary" to={`/lessons/${next}`}>이어서 학습<ArrowRight size={17} /></Link><Link className="button" to="/textbook">교재 연습문제 복습</Link></div>
-          <div className="hero-facts"><span>{lessons.length}강의</span><span>{cases.length}사례</span><span>{questions.length}고유 문항</span></div>
+          <div className="hero-facts"><span>4장 · 장별 한 페이지</span><span>{cases.length}사례</span><span>{questions.length}고유 문항</span></div>
         </div>
         <div className="hero-visual security-visual">
           <span className="eyebrow">TRUST BOUNDARY</span><h2>로그인 성공 ≠ 접근 허용</h2>
@@ -306,7 +325,7 @@ function Home() {
         {[
           [
             "읽은 강의",
-            `${complete} / ${lessons.length}`,
+            `${complete} / 4장`,
             "이해의 출발점",
             BookOpen,
           ],
@@ -406,7 +425,7 @@ function Home() {
                 <Link
                   key={t.id}
                   className="topic-card panel"
-                  to={`/lessons?topic=${t.id}`}
+                  to={`/lessons/chapter/${t.id}`}
                 >
                   <span className="topic-letter">{t.id}</span>
                   <div>
@@ -414,7 +433,7 @@ function Home() {
                     <p>{t.subtitle}</p>
                     <progress value={done} max={ls.length} />
                     <small>
-                      {done}/{ls.length} 강의 ·{" "}
+                      {done}/{ls.length} 단원 ·{" "}
                       {stats[t.id]
                         ? `${Math.round((stats[t.id].correct / stats[t.id].total) * 100)}% 정답률`
                         : "아직 응시하지 않음"}
@@ -473,278 +492,6 @@ function Home() {
           </div>
         </aside>
       </div>
-    </>
-  );
-}
-function Classroom() {
-  const location = useLocation(),
-    id = location.pathname.split("/")[2];
-  const [query, setQuery] = useState(""),
-    [topic, setTopic] = useState(
-      new URLSearchParams(location.search).get("topic") ?? "",
-    );
-  const { profile, session, run } = useStudy();
-  const [check, setCheck] = useState(false);
-  const lesson = id ? lessonMap[id] : null;
-  useEffect(() => { setTopic(new URLSearchParams(location.search).get("topic") ?? ""); }, [location.search]);
-  useEffect(() => {
-    setCheck(false);
-    if (lesson) void run(readLesson(session.userId, lesson.id));
-  }, [id, session.userId]);
-  if (id && !lesson)
-    return (
-      <div className="empty">
-        존재하지 않는 강의입니다.<Link to="/lessons">강의 목록</Link>
-      </div>
-    );
-  if (lesson) {
-    const done = profile.progress.some(
-        (p) => p.lessonId === lesson.id && p.completed,
-      ),
-      index = lessons.indexOf(lesson);
-    const anchors = [
-      ["start", "이 강의의 핵심"],
-      ["goals", "학습목표"],
-      ...lesson.sections.map((s, i) => [`section-${i}`, s.heading]),
-      ["worked", "자료 단계별 풀이"],
-      ["terms", "용어와 비교"],
-      ...(lesson.microLab ? [["lab", "수업 코드 출력 확인"]] : []),
-      ["code", "수업 코드·도식"],
-      ["read", "읽는 순서"],
-      ["mistakes", "실수·시험 포인트"],
-      ["check", "확인 문제"],
-      ["self-checks", "자가 점검 3문제"],
-      ["summary", "핵심 정리"],
-      ["cases", "연결 사례"],
-    ];
-    const contents = anchors.map(([anchor, title]) => (
-      <button key={anchor} onClick={() => document.getElementById(anchor)?.scrollIntoView({
-        behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
-      })}>{title}</button>
-    ));
-    return (
-      <>
-        <div className="lesson-top">
-          <Link to="/lessons">← 강의 목록</Link>
-          <BookmarkButton targetId={lesson.id} kind="lesson" />
-        </div>
-        <Heading
-          eyebrow={`${lesson.topic} · ${lesson.id} · 약 ${lesson.minutes}분`}
-          title={lesson.title}
-          description="수업 개념·비교 → 코드·도식 → 사례 풀이 → 시험 포인트·자가 점검"
-        />
-        <div className="lesson-layout">
-          <article className="lesson-article panel">
-            <details className="mobile-lesson-toc" key={`toc-${lesson.id}`}>
-              <summary>강의 목차 · 바로가기</summary>
-              <nav aria-label="강의 목차">{contents}</nav>
-            </details>
-            <LessonPrimer key={`start-${lesson.id}`} lesson={lesson} />
-            <section id="goals">
-              <h2>학습목표</h2>
-              <ul>
-                {lesson.objectives.map((g) => (
-                  <li key={g}>{g}</li>
-                ))}
-              </ul>
-            </section>
-            {lesson.sections.map((s, i) => (
-              <section key={s.heading} id={`section-${i}`}>
-                <span className="eyebrow">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <h2>{s.heading}</h2>
-                {s.body.map((b, j) => (
-                  <p key={j}>{b}</p>
-                ))}
-              </section>
-            ))}
-            <WorkedExamples key={`worked-${lesson.id}`} lesson={lesson} />
-            <section id="terms">
-              <h2>용어와 비교</h2>
-              <div className="table-scroll">
-                <table>
-                  <thead>
-                    <tr>
-                      <th>용어</th>
-                      <th>뜻</th>
-                      <th>읽을 때 기준</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {lesson.terms.map((row, i) => (
-                      <tr key={i}>
-                        {row.map((v, j) => (
-                          <td key={j}>{v}</td>
-                        ))}
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </section>
-            <LessonLab key={`lab-${lesson.id}`} lesson={lesson} />
-            <section id="code">
-              <h2>{lesson.codeKind === "diagram" ? "수업 개념 도식" : "수업 코드 읽기"}</h2>
-              <Code code={lesson.code} notes={lesson.codeNotes} label={lesson.codeKind === "diagram" ? "수업 개념 도식" : "수업 코드 읽기"} />
-            </section>
-            <section id="read">
-              <h2>읽는 순서</h2>
-              <ol>
-                {lesson.readOrder.map((r) => (
-                  <li key={r}>{r}</li>
-                ))}
-              </ol>
-            </section>
-            <section id="mistakes">
-              <h2>자주 하는 실수 · 시험 포인트</h2>
-              <ul className="mistakes">
-                {lesson.mistakes.map((m) => (
-                  <li key={m}>
-                    <TriangleAlert size={16} />
-                    {m}
-                  </li>
-                ))}
-              </ul>
-              {lesson.verification && (
-                <div className="notice">{lesson.verification}</div>
-              )}
-            </section>
-            <section id="check" className="lesson-check">
-              <span className="eyebrow">QUICK CHECK</span>
-              <h2>잠깐 확인</h2>
-              <p>{lesson.check.question}</p>
-              <button onClick={() => setCheck(!check)}>
-                {check ? "답 접기" : "답 확인"}
-              </button>
-              {check && <p className="explanation">{lesson.check.answer}</p>}
-            </section>
-            <LessonSelfChecks key={`checks-${lesson.id}`} lesson={lesson} />
-            <LessonSummary lesson={lesson} />
-            <section id="cases">
-              <h2>배운 내용을 사례에 적용하기</h2>
-              {lesson.caseIds.map((cid) => (
-                <div className="linked-case" key={cid}>
-                  <div>
-                    <span className="tag">{cid}</span>
-                    <strong>{caseMap[cid].title}</strong>
-                  </div>
-                  <div className="actions compact">
-                    <Link className="button" to={`/reading?case=${cid}`}>
-                      자료 읽기
-                    </Link>
-                    <Link className="button primary" to={`/practice?case=${cid}`}>
-                      이 자료 확인 문제
-                      <ArrowRight size={14} />
-                    </Link>
-                  </div>
-                </div>
-              ))}
-            </section>
-            <Sources refs={lesson.sources} supplements={lesson.supplements} />
-            <div className="actions">
-              <button
-                className="primary"
-                onClick={() =>
-                  void run(readLesson(session.userId, lesson.id, !done))
-                }
-              >
-                <Check size={16} />
-                {done ? "읽기 완료 해제" : "읽기 완료"}
-              </button>
-              {lessons[index + 1] && (
-                <Link
-                  className="button"
-                  to={`/lessons/${lessons[index + 1].id}`}
-                >
-                  다음 강의
-                  <ArrowRight size={16} />
-                </Link>
-              )}
-            </div>
-          </article>
-          <aside className="lesson-toc panel">
-            <h3>이 강의의 목차</h3>
-            {contents}
-            <span className="tag">{done ? "✓ 읽기 완료" : "읽는 중"}</span>
-          </aside>
-        </div>
-      </>
-    );
-  }
-  const visible = lessons.filter(
-    (l) =>
-      (!topic || l.topic === topic) &&
-      `${l.title} ${l.tags.join(" ")} ${l.sections.map((s) => s.body.join(" ")).join(" ")}`
-        .toLowerCase()
-        .includes(query.toLowerCase()),
-  );
-  return (
-    <>
-      <Heading
-        eyebrow="CLASSROOM"
-        title="1~4장 강의실"
-        description="보안 목표부터 권한·로그·네트워크·웹까지. 강의 슬라이드의 개념과 사례를 연결했습니다."
-      />
-      <div className="filters">
-        <label>
-          강의 검색
-          <input
-            placeholder="예: 세션, ARP, SQL"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-          />
-        </label>
-        <label>
-          주제
-          <select value={topic} onChange={(e) => setTopic(e.target.value)}>
-            <option value="">모든 주제</option>
-            {topics.map((t) => (
-              <option key={t.id} value={t.id}>
-                {t.id}. {t.title}
-              </option>
-            ))}
-          </select>
-        </label>
-        <span>{visible.length}개 강의</span>
-      </div>
-      <div className="lesson-cards">
-        {visible.map((l) => (
-          <article className="lesson-card panel" key={l.id}>
-            <div className="lesson-card-top">
-              <span className="topic-letter">{l.id}</span>
-              <BookmarkButton targetId={l.id} kind="lesson" />
-            </div>
-            <Link to={`/lessons/${l.id}`}>
-              <h2>{l.title}</h2>
-              <p>{l.objectives[0]}</p>
-              <div className="tags">
-                {l.tags.map((tag) => (
-                  <span className="tag" key={tag}>
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </Link>
-            <div className="card-bottom">
-              <span>
-                {profile.progress.some(
-                  (p) => p.lessonId === l.id && p.completed,
-                )
-                  ? "✓ 읽기 완료"
-                  : `약 ${l.minutes}분 · ${l.caseIds.length}개 사례`}
-              </span>
-              <Link to={`/lessons/${l.id}`}>
-                학습하기
-                <ArrowRight size={14} />
-              </Link>
-            </div>
-          </article>
-        ))}
-      </div>
-      {!visible.length && (
-        <p className="empty">검색 조건에 맞는 강의가 없습니다.</p>
-      )}
     </>
   );
 }

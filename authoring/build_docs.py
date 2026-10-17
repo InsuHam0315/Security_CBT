@@ -5,6 +5,7 @@ from collections import Counter
 root=Path(__file__).resolve().parents[1]
 read=lambda name:json.loads((root/'src/content'/f'{name}.json').read_text(encoding='utf8'))
 sources,topics,lessons,cases,questions,rounds=map(read,['sources','topics','lessons','cases','questions','blueprints'])
+slide_coverage=read('slide-coverage')
 cm={c['id']:c for c in cases};qm={q['id']:q for q in questions}
 docs=root/'docs';docs.mkdir(exist_ok=True)
 refs=lambda item:'; '.join(r['sourceId']+' '+','.join(map(str,r['pages'])) for r in item['sources'])
@@ -16,9 +17,13 @@ for s in sources:
  for page in range(1,s['pages']+1):
   matching=lambda items:[i['id'] for i in items if any(r['sourceId']==s['id'] and page in r['pages'] for r in i['sources'])]
   lines.append('| '+str(page)+' | '+' | '.join(', '.join(matching(items)) or '—' for items in [lessons,cases,questions])+' |')
+lines+=['','## 본문 설명과 연결한 슬라이드','','본문 슬라이드 232장 전체를 147개 설명 절에 연결했습니다. 표지·목차·학습목표·마무리/개정 안내 16장은 구분했습니다. 대응표는 누락 점검 도구이며 내용의 사실 정확성을 자동으로 증명하는 것은 아닙니다. 각 장은 한 페이지로 표시합니다.','','| 자료 | 슬라이드 | 분류 | 실제 설명 위치 |','|---|---:|---|---|']
+for row in slide_coverage:
+ target='; '.join(x['lessonId']+' · '+x['heading'] for x in row['sections']) or row['reason']
+ lines.append(f"| {row['sourceId']} | {row['page']} | {row['kind']} | {target} |")
 lines+=['','## 교재 연습문제','','교재: 양대일, 『정보 보안 개론』 4판, 한빛아카데미, ISBN 9791156645443. [출판사](https://www.hanbit.co.kr/books/B8742050283?code=B8742050283)는 공식 연습문제 해답을 제공하지 않는다고 안내합니다.','','인터넷에서 발견한 제3자 게시물: [1장](https://greencloud.tistory.com/99), [2장](https://aengdoo25.tistory.com/3), [3장](https://aengdoo25.tistory.com/2), [4장](https://aengdoo25.tistory.com/1). 1장은 판본 미표기, 2~4장은 제목에 개정4판 표기. 책의 원문·번호·정답과 일치하는지는 미검증입니다. 전체를 복제해 콘텐츠에 넣지 않았습니다. 직접 작성한 예상문제와 교재 복습 체크리스트를 분리합니다. 실제 족보는 아직 제공되지 않았습니다.']
 (docs/'SOURCES.md').write_text('\n'.join(lines)+'\n',encoding='utf8',newline='\n')
-lines=['# 시험 범위와 콘텐츠 커버리지','','사용자 확인 범위: 1~4장 전체. 교수자의 공지·실제 시험 규격은 미확인. 5장 이후 독립 강의를 추가하지 않았습니다. 소개 수준의 암호·서명·프로토콜은 1~4장에서 다룬 수준에 맞춥니다.','','| 범위 | 강의 | 사례 | 고유 문항 |','|---|---:|---:|---:|']
+lines=['# 시험 범위와 콘텐츠 커버리지','','화면 구성: 1~4장 각 한 페이지. 기존 24개 단원 ID는 진도·북마크·문제 연결을 보존하는 장 내부 앵커입니다. 147개 본문 설명 절과 232개 본문 슬라이드를 대응시키고 추가 해설·정정, 직접 만든 가상 사례·예상문제는 별도 영역에 표시합니다.','','사용자 확인 범위: 1~4장 전체. 교수자의 공지·실제 시험 규격은 미확인. 5장 이후 독립 강의를 추가하지 않았습니다. 소개 수준의 암호·서명·프로토콜은 1~4장에서 다룬 수준에 맞춥니다.','','| 범위 | 강의 | 사례 | 고유 문항 |','|---|---:|---:|---:|']
 for t in topics:lines.append(f"| {t['title']} | {sum(l['topic']==t['id'] for l in lessons)} | {sum(c['topic']==t['id'] for c in cases)} | {sum(q['topic']==t['id'] for q in questions)} |")
 lines+=['','각 사례는 직접 만든 가상 자료이며 5문항을 공유합니다. 이름·숫자만 바꾼 복제 사례를 만들지 않았습니다.','','| 강의 | 제목 | 사례 | 고유 문항 | 근거 슬라이드 |','|---|---|---|---|---|']
 for l in lessons:
@@ -36,3 +41,11 @@ for i,a in enumerate(rounds):
  for j in range(i+1,len(rounds)):lines.append(f"| {a['id']} / {rounds[j]['id']} | {len(sets[i]&sets[j])} |")
 lines+=['','두 회차의 공유 개수를 모두 더한 값은 90번의 추가 출제 횟수와 다른 집계입니다. 세 회차 이상에 쓰인 문항은 조합마다 계산됩니다.','', '문항 형식: '+', '.join(f'{k} {v}' for k,v in Counter(q['kind'] for q in questions).items())+'.','', '강의·개별 사례·오답·북마크의 집중 복습은 종합 회차와 별도 준비 화면으로 이동합니다. 향후 실제 기출은 출처를 확인해 별도 컬렉션으로 추가하며 현재 예상문제의 출처 표시를 바꾸지 않습니다.']
 (docs/'COVERAGE.md').write_text('\n'.join(lines)+'\n',encoding='utf8',newline='\n')
+
+# 정정 내용도 강의 저작 데이터에서 생성해 화면과 문서의 불일치를 막는다.
+lines=['# 수업 자료와 구분한 추가 해설·정정','','본문은 PPT의 순서와 항목을 설명하고, 아래는 원자료의 오류·버전 차이 또는 추가 해석이다. 시험의 정정 기준을 새로 선언하지 않는다.','']
+for l in lessons:
+ for e in l['additionalSections']:
+  lines += [f"## {l['id']} · {e['heading']}",'']+e['body']+['']
+  lines += [f"- [{a['title']}]({a['url']})" for a in e['links']]+['']
+(docs/'CORRECTIONS.md').write_text('\n'.join(lines).rstrip()+'\n',encoding='utf8',newline='\n')

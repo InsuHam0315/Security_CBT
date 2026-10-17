@@ -2629,4 +2629,60 @@ button.primary,.button.primary { color:#081829; }
 main>.panel { margin-bottom:24px; }
 @media(max-width:700px) { .hero h1 { font-size:31px; } .security-visual h2 { font-size:22px; } .linked-case { flex-wrap:wrap; } }
 
+/* Each chapter is one continuous document; optional practice stays separate. */
+.sidebar-brand-row { display:flex; align-items:center; gap:4px; min-width:0; }
+.sidebar-brand-row .brand { flex:1; min-width:0; font-size:17px; gap:8px; }
+.sidebar-brand-row .brand small { font-size:10px; }
+.sidebar-brand-row .brand-icon { flex:none; }
+.sidebar-collapse { flex:none; padding:7px; }
+.desktop-menu { display:inline-flex; }
+@media(min-width:761px) {
+  .sidebar-closed .sidebar { visibility:hidden; transform:translateX(-100%); }
+  .sidebar-closed .main-wrap { margin-left:0; width:100%; }
+}
+@media(max-width:760px) { .desktop-menu { display:none; } }
+.chapter-search { display:block; max-width:600px; margin:24px 0; }
+.chapter-cards { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; }
+.chapter-card h2 { font-size:25px; }
+.chapter-card ul { font-size:16px; color:var(--muted); }
+.chapter-unit { border-top:1px solid var(--line-strong); padding-top:32px; margin-top:36px; scroll-margin-top:100px; }
+.chapter-unit-heading { position:relative; padding-right:55px; margin-bottom:30px; }
+.chapter-unit-heading .bookmark { position:absolute; top:0; right:0; }
+.chapter-unit-heading .eyebrow { letter-spacing:.3px; }
+.chapter-unit-heading h2 { margin:8px 0; font-size:30px; }
+.chapter-article .ppt-section h3 { font-size:23px; margin:0 0 6px; line-height:1.6; }
+.section-source { font-size:14px; color:var(--muted); margin-bottom:14px; line-height:1.6; }
+.chapter-basis { border-left:3px solid var(--accent); padding:12px 20px; background:var(--accent-dim); font-size:16px; }
+.ppt-table table { min-width:520px; white-space:normal; }
+.ppt-table caption { text-align:left; font-size:14px; padding-bottom:10px; color:var(--muted); }
+.ppt-table th,.ppt-table td { vertical-align:top; line-height:1.8; }
+.ppt-code { white-space:pre; overflow-x:auto; max-width:100%; font-size:15px; padding:18px; background:var(--bg); border-radius:9px; line-height:1.8; }
+.chapter-unit-progress { text-align:right; margin:24px 0 36px; }
+.chapter-unit-progress button { font-size:14px; }
+.chapter-extras { margin-top:55px!important; padding:24px 0 0 22px; border-left:3px solid var(--violet); }
+.chapter-extras>.eyebrow { color:var(--violet); letter-spacing:.4px; }
+.chapter-extra-unit { scroll-margin-top:110px; }
+.supplement-jump { border:0; background:transparent; color:var(--violet); padding:5px 0; font-size:14px; text-align:left; }
+.chapter-extras h3 { font-size:22px; margin-top:28px; }
+.chapter-extras p { font-size:17px; line-height:2; }
+.supplement-links { font-size:15px; color:var(--accent); }
+.chapter-check-group,.chapter-practice { border-top:1px solid var(--line); padding:18px 0; }
+.chapter-check-group summary,.chapter-practice summary { cursor:pointer; font-size:17px; font-weight:650; }
+.chapter-check-group h3 { font-size:19px; }
+.chapter-practice>section { margin-top:30px; }
+.chapter-toc h2 { font-size:17px; }
+.chapter-toc-group { margin-bottom:12px; }
+.chapter-toc nav button,.mobile-lesson-toc nav button { display:block; width:100%; border:0; padding:9px 0; background:transparent; color:var(--muted); text-align:left; font-size:15px; line-height:1.6; }
+.chapter-toc-group>button:first-child { font-weight:750; color:var(--text); }
+.chapter-toc nav .chapter-toc-detail { font-size:13px; padding:5px 0 5px 10px; }
+.chapter-article .sources { font-size:13px; }
+@media(max-width:1000px) { .chapter-cards { grid-template-columns:minmax(0,1fr); } }
+@media(max-width:760px) {
+  .chapter-article { padding:24px 18px; }
+  .chapter-unit-heading h2 { font-size:25px; }
+  .chapter-article .ppt-section h3 { font-size:21px; }
+  .chapter-extras { padding-left:14px; }
+  .chapter-basis { padding:10px 14px; }
+}
+
 .brand-icon { background:linear-gradient(145deg,#549bea,#29457a); }

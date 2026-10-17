@@ -1,25 +1,25 @@
 [
   {
     "id": "P1",
-    "filename": "01장 정보 보안의 세계.pptx",
+    "filename": "01장_정보 보안의 세계v2.pptx",
     "role": "primary",
     "pages": 40
   },
   {
     "id": "P2",
-    "filename": "02장 시스템 보안.pptx",
+    "filename": "02장_시스템 보안v2.pptx",
     "role": "primary",
     "pages": 74
   },
   {
     "id": "P3",
-    "filename": "03장 네트워크 보안.pptx",
+    "filename": "03장_네트워크 보안v2.pptx",
     "role": "primary",
     "pages": 78
   },
   {
     "id": "P4",
-    "filename": "04장 웹 보안.pptx",
+    "filename": "04장_웹 보안v2.pptx",
     "role": "primary",
     "pages": 56
   }

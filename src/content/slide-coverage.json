@@ -1,0 +1,3130 @@
+[
+  {
+    "sourceId": "P1",
+    "page": 1,
+    "kind": "frontmatter",
+    "reason": "표지",
+    "sections": []
+  },
+  {
+    "sourceId": "P1",
+    "page": 2,
+    "kind": "frontmatter",
+    "reason": "목차",
+    "sections": []
+  },
+  {
+    "sourceId": "P1",
+    "page": 3,
+    "kind": "frontmatter",
+    "reason": "학습목표",
+    "sections": []
+  },
+  {
+    "sourceId": "P1",
+    "page": 4,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL01",
+        "sectionIndex": 0,
+        "heading": "일상에 연결된 정보자산"
+      }
+    ]
+  },
+  {
+    "sourceId": "P1",
+    "page": 5,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL01",
+        "sectionIndex": 1,
+        "heading": "1950년대 이전: 에니그마와 콜로서스"
+      }
+    ]
+  },
+  {
+    "sourceId": "P1",
+    "page": 6,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL01",
+        "sectionIndex": 1,
+        "heading": "1950년대 이전: 에니그마와 콜로서스"
+      }
+    ]
+  },
+  {
+    "sourceId": "P1",
+    "page": 7,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL01",
+        "sectionIndex": 2,
+        "heading": "암호화의 기본 흐름"
+      }
+    ]
+  },
+  {
+    "sourceId": "P1",
+    "page": 8,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL01",
+        "sectionIndex": 3,
+        "heading": "1960~1970년대: 연결망·UNIX·이메일"
+      }
+    ]
+  },
+  {
+    "sourceId": "P1",
+    "page": 9,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL01",
+        "sectionIndex": 4,
+        "heading": "개인용 컴퓨터의 보급"
+      }
+    ]
+  },
+  {
+    "sourceId": "P1",
+    "page": 10,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL01",
+        "sectionIndex": 5,
+        "heading": "1980년대: 해커 집단과 전화망 공격"
+      }
+    ]
+  },
+  {
+    "sourceId": "P1",
+    "page": 11,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL01",
+        "sectionIndex": 5,
+        "heading": "1980년대: 해커 집단과 전화망 공격"
+      }
+    ]
+  },
+  {
+    "sourceId": "P1",
+    "page": 12,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL01",
+        "sectionIndex": 6,
+        "heading": "해킹 문화와 제도적 대응"
+      }
+    ]
+  },
+  {
+    "sourceId": "P1",
+    "page": 13,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL01",
+        "sectionIndex": 7,
+        "heading": "유명 해커·모리스 웜·해커 선언문"
+      }
+    ]
+  },
+  {
+    "sourceId": "P1",
+    "page": 14,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL01",
+        "sectionIndex": 7,
+        "heading": "유명 해커·모리스 웜·해커 선언문"
+      }
+    ]
+  },
+  {
+    "sourceId": "P1",
+    "page": 15,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL01",
+        "sectionIndex": 8,
+        "heading": "데프콘과 웹을 통한 해킹 정보 공유"
+      }
+    ]
+  },
+  {
+    "sourceId": "P1",
+    "page": 16,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL01",
+        "sectionIndex": 9,
+        "heading": "1990년대 후반: 도구를 이용한 공격"
+      }
+    ]
+  },
+  {
+    "sourceId": "P1",
+    "page": 17,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL01",
+        "sectionIndex": 10,
+        "heading": "2000년대: 대규모 장애와 악성코드"
+      }
+    ]
+  },
+  {
+    "sourceId": "P1",
+    "page": 18,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL01",
+        "sectionIndex": 11,
+        "heading": "금전 목적의 범죄와 APT"
+      }
+    ]
+  },
+  {
+    "sourceId": "P1",
+    "page": 19,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL01",
+        "sectionIndex": 12,
+        "heading": "국내 장애·스마트폰·가상화폐"
+      }
+    ]
+  },
+  {
+    "sourceId": "P1",
+    "page": 20,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL01",
+        "sectionIndex": 13,
+        "heading": "위협의 변화와 신원 확인"
+      }
+    ]
+  },
+  {
+    "sourceId": "P1",
+    "page": 21,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL01",
+        "sectionIndex": 13,
+        "heading": "위협의 변화와 신원 확인"
+      }
+    ]
+  },
+  {
+    "sourceId": "P1",
+    "page": 22,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL01",
+        "sectionIndex": 14,
+        "heading": "최근 사건: 랜섬웨어·공급망·인증정보"
+      }
+    ]
+  },
+  {
+    "sourceId": "P1",
+    "page": 23,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL01",
+        "sectionIndex": 14,
+        "heading": "최근 사건: 랜섬웨어·공급망·인증정보"
+      }
+    ]
+  },
+  {
+    "sourceId": "P1",
+    "page": 24,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL02",
+        "sectionIndex": 0,
+        "heading": "기밀성·무결성·가용성"
+      }
+    ]
+  },
+  {
+    "sourceId": "P1",
+    "page": 25,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL02",
+        "sectionIndex": 0,
+        "heading": "기밀성·무결성·가용성"
+      }
+    ]
+  },
+  {
+    "sourceId": "P1",
+    "page": 26,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL02",
+        "sectionIndex": 1,
+        "heading": "PPT의 학생 정보 예시로 세 목표 구분하기"
+      }
+    ]
+  },
+  {
+    "sourceId": "P1",
+    "page": 27,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL02",
+        "sectionIndex": 2,
+        "heading": "랜섬웨어와 백업의 범위"
+      }
+    ]
+  },
+  {
+    "sourceId": "P1",
+    "page": 28,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL02",
+        "sectionIndex": 3,
+        "heading": "AI 음성 사칭과 독립적인 확인"
+      }
+    ]
+  },
+  {
+    "sourceId": "P1",
+    "page": 29,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL02",
+        "sectionIndex": 4,
+        "heading": "프롬프트 주입과 신뢰 경계"
+      }
+    ]
+  },
+  {
+    "sourceId": "P1",
+    "page": 30,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL02",
+        "sectionIndex": 5,
+        "heading": "인증·인가·공개 범위"
+      }
+    ]
+  },
+  {
+    "sourceId": "P1",
+    "page": 31,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL03",
+        "sectionIndex": 0,
+        "heading": "사이버 범죄와 윤리 의식"
+      }
+    ]
+  },
+  {
+    "sourceId": "P1",
+    "page": 32,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL03",
+        "sectionIndex": 1,
+        "heading": "정보통신망법: PPT에 제시된 위반 행위"
+      }
+    ]
+  },
+  {
+    "sourceId": "P1",
+    "page": 33,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL03",
+        "sectionIndex": 2,
+        "heading": "기반시설·클라우드·전자정부 관련 법률"
+      }
+    ]
+  },
+  {
+    "sourceId": "P1",
+    "page": 34,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL03",
+        "sectionIndex": 3,
+        "heading": "허가된 점검의 범위"
+      }
+    ]
+  },
+  {
+    "sourceId": "P1",
+    "page": 35,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL03",
+        "sectionIndex": 4,
+        "heading": "보호 대상과 필요한 지식의 전체 구조"
+      }
+    ]
+  },
+  {
+    "sourceId": "P1",
+    "page": 36,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL03",
+        "sectionIndex": 5,
+        "heading": "운영체제·네트워크·프로그래밍·서버"
+      }
+    ]
+  },
+  {
+    "sourceId": "P1",
+    "page": 37,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL03",
+        "sectionIndex": 6,
+        "heading": "보안 솔루션·모니터링·암호·정책"
+      }
+    ]
+  },
+  {
+    "sourceId": "P1",
+    "page": 38,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL03",
+        "sectionIndex": 7,
+        "heading": "사고 대응에서의 협력과 복구 검증"
+      }
+    ]
+  },
+  {
+    "sourceId": "P1",
+    "page": 39,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL03",
+        "sectionIndex": 8,
+        "heading": "PPT의 캠퍼스 사고 사례 종합"
+      }
+    ]
+  },
+  {
+    "sourceId": "P1",
+    "page": 40,
+    "kind": "frontmatter",
+    "reason": "마무리",
+    "sections": []
+  },
+  {
+    "sourceId": "P2",
+    "page": 1,
+    "kind": "frontmatter",
+    "reason": "표지",
+    "sections": []
+  },
+  {
+    "sourceId": "P2",
+    "page": 2,
+    "kind": "frontmatter",
+    "reason": "목차",
+    "sections": []
+  },
+  {
+    "sourceId": "P2",
+    "page": 3,
+    "kind": "frontmatter",
+    "reason": "학습목표",
+    "sections": []
+  },
+  {
+    "sourceId": "P2",
+    "page": 4,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL04",
+        "sectionIndex": 0,
+        "heading": "시스템의 구성과 여섯 가지 관리 주제"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 5,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL04",
+        "sectionIndex": 0,
+        "heading": "시스템의 구성과 여섯 가지 관리 주제"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 6,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL04",
+        "sectionIndex": 1,
+        "heading": "식별과 인증, 네 가지 인증 수단"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 7,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL04",
+        "sectionIndex": 2,
+        "heading": "OTP와 패스키의 차이"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 8,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL04",
+        "sectionIndex": 2,
+        "heading": "OTP와 패스키의 차이"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 9,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL05",
+        "sectionIndex": 0,
+        "heading": "Windows 사용자와 그룹 확인"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 10,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL05",
+        "sectionIndex": 0,
+        "heading": "Windows 사용자와 그룹 확인"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 11,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL05",
+        "sectionIndex": 1,
+        "heading": "Windows 기본 그룹의 역할"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 12,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL05",
+        "sectionIndex": 2,
+        "heading": "UNIX root와 /etc/passwd의 일곱 필드"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 13,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL05",
+        "sectionIndex": 2,
+        "heading": "UNIX root와 /etc/passwd의 일곱 필드"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 14,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL05",
+        "sectionIndex": 3,
+        "heading": "/etc/group과 기본·추가 그룹"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 15,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL05",
+        "sectionIndex": 4,
+        "heading": "데이터베이스와 네트워크 장비의 계정"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 16,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL06",
+        "sectionIndex": 0,
+        "heading": "세션의 의미와 지속적인 확인"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 17,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL06",
+        "sectionIndex": 0,
+        "heading": "세션의 의미와 지속적인 확인"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 18,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL06",
+        "sectionIndex": 1,
+        "heading": "세션 수명·재발급·쿠키 속성"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 19,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL06",
+        "sectionIndex": 1,
+        "heading": "세션 수명·재발급·쿠키 속성"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 20,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL07",
+        "sectionIndex": 0,
+        "heading": "접근 제어와 관리 인터페이스"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 21,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL07",
+        "sectionIndex": 1,
+        "heading": "관리 접속의 노출 줄이기"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 22,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL07",
+        "sectionIndex": 2,
+        "heading": "UNIX의 inetd와 TCP Wrapper"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 23,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL07",
+        "sectionIndex": 3,
+        "heading": "데이터베이스의 IP·계정 접근 제어"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 24,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL07",
+        "sectionIndex": 4,
+        "heading": "응용프로그램과 장비의 접근 제어"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 25,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL07",
+        "sectionIndex": 5,
+        "heading": "제로 트러스트의 판단 요소"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 26,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL07",
+        "sectionIndex": 5,
+        "heading": "제로 트러스트의 판단 요소"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 27,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL08",
+        "sectionIndex": 0,
+        "heading": "Windows NTFS의 권한"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 28,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL08",
+        "sectionIndex": 1,
+        "heading": "UNIX의 파일 종류와 rwx"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 29,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL09",
+        "sectionIndex": 0,
+        "heading": "DDL·DML·DCL"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 30,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL09",
+        "sectionIndex": 1,
+        "heading": "뷰를 통한 공개 범위 제한"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 31,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL09",
+        "sectionIndex": 2,
+        "heading": "응용프로그램의 실행 권한과 JIT"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 32,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL09",
+        "sectionIndex": 2,
+        "heading": "응용프로그램의 실행 권한과 JIT"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 33,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL10",
+        "sectionIndex": 0,
+        "heading": "AAA와 감사 기록"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 34,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL10",
+        "sectionIndex": 1,
+        "heading": "Windows 감사 정책과 이벤트 뷰어"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 35,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL10",
+        "sectionIndex": 1,
+        "heading": "Windows 감사 정책과 이벤트 뷰어"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 36,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL10",
+        "sectionIndex": 1,
+        "heading": "Windows 감사 정책과 이벤트 뷰어"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 37,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL10",
+        "sectionIndex": 2,
+        "heading": "UNIX 로그 위치와 로그인 기록"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 38,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL10",
+        "sectionIndex": 2,
+        "heading": "UNIX 로그 위치와 로그인 기록"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 39,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL10",
+        "sectionIndex": 3,
+        "heading": "su·셸 이력·syslog"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 40,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL10",
+        "sectionIndex": 3,
+        "heading": "su·셸 이력·syslog"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 41,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL10",
+        "sectionIndex": 4,
+        "heading": "SQL Server Audit와 과거 C2 감사"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 42,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL10",
+        "sectionIndex": 5,
+        "heading": "MySQL의 다섯 가지 로그"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 43,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL10",
+        "sectionIndex": 5,
+        "heading": "MySQL의 다섯 가지 로그"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 44,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL10",
+        "sectionIndex": 6,
+        "heading": "MySQL General Log 설정 읽기"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 45,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL10",
+        "sectionIndex": 7,
+        "heading": "Oracle 통합 감사와 감사 결과"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 46,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL10",
+        "sectionIndex": 7,
+        "heading": "Oracle 통합 감사와 감사 결과"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 47,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL10",
+        "sectionIndex": 8,
+        "heading": "DB 트래픽을 통한 감사"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 48,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL10",
+        "sectionIndex": 9,
+        "heading": "IIS 로그 형식과 샘플 해석"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 49,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL10",
+        "sectionIndex": 9,
+        "heading": "IIS 로그 형식과 샘플 해석"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 50,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL10",
+        "sectionIndex": 10,
+        "heading": "Apache access_log와 LogFormat"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 51,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL10",
+        "sectionIndex": 11,
+        "heading": "Apache 필드 표 읽기"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 52,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL10",
+        "sectionIndex": 12,
+        "heading": "Apache 샘플의 상태·바이트·사용자"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 53,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL10",
+        "sectionIndex": 13,
+        "heading": "보안 장비·관리 시스템과 원격 로그"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 54,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL10",
+        "sectionIndex": 13,
+        "heading": "보안 장비·관리 시스템과 원격 로그"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 55,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL10",
+        "sectionIndex": 14,
+        "heading": "상관 분석과 사건의 재구성"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 56,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL10",
+        "sectionIndex": 14,
+        "heading": "상관 분석과 사건의 재구성"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 57,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL11",
+        "sectionIndex": 0,
+        "heading": "취약점의 우선순위와 조치 절차"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 58,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL11",
+        "sectionIndex": 0,
+        "heading": "취약점의 우선순위와 조치 절차"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 59,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL11",
+        "sectionIndex": 0,
+        "heading": "취약점의 우선순위와 조치 절차"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 60,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL11",
+        "sectionIndex": 1,
+        "heading": "불필요한 고위험 기능: xp_cmdshell"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 61,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL11",
+        "sectionIndex": 2,
+        "heading": "SMTP의 정보 노출: VRFY·EXPN"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 62,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL11",
+        "sectionIndex": 3,
+        "heading": "모바일 운영체제의 역사"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 63,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL11",
+        "sectionIndex": 3,
+        "heading": "모바일 운영체제의 역사"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 64,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL11",
+        "sectionIndex": 4,
+        "heading": "iOS의 보안 구조"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 65,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL11",
+        "sectionIndex": 4,
+        "heading": "iOS의 보안 구조"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 66,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL11",
+        "sectionIndex": 4,
+        "heading": "iOS의 보안 구조"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 67,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL11",
+        "sectionIndex": 4,
+        "heading": "iOS의 보안 구조"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 68,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL11",
+        "sectionIndex": 5,
+        "heading": "Android의 보안 구조"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 69,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL11",
+        "sectionIndex": 5,
+        "heading": "Android의 보안 구조"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 70,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL11",
+        "sectionIndex": 6,
+        "heading": "iOS와 Android의 비교 기준"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 71,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL11",
+        "sectionIndex": 7,
+        "heading": "모바일 앱의 권한·저장·통신 점검"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 72,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL11",
+        "sectionIndex": 8,
+        "heading": "Bluetooth·Wi-Fi와 주변 탐색"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 73,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL11",
+        "sectionIndex": 9,
+        "heading": "블루스나프·블루버그와 방어"
+      }
+    ]
+  },
+  {
+    "sourceId": "P2",
+    "page": 74,
+    "kind": "frontmatter",
+    "reason": "개정 안내",
+    "sections": []
+  },
+  {
+    "sourceId": "P3",
+    "page": 1,
+    "kind": "frontmatter",
+    "reason": "표지",
+    "sections": []
+  },
+  {
+    "sourceId": "P3",
+    "page": 2,
+    "kind": "frontmatter",
+    "reason": "목차",
+    "sections": []
+  },
+  {
+    "sourceId": "P3",
+    "page": 3,
+    "kind": "frontmatter",
+    "reason": "학습목표",
+    "sections": []
+  },
+  {
+    "sourceId": "P3",
+    "page": 4,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL12",
+        "sectionIndex": 0,
+        "heading": "OSI 7계층의 전체 구조"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 5,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL12",
+        "sectionIndex": 1,
+        "heading": "물리 계층: 케이블과 커넥터"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 6,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL12",
+        "sectionIndex": 1,
+        "heading": "물리 계층: 케이블과 커넥터"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 7,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL12",
+        "sectionIndex": 1,
+        "heading": "물리 계층: 케이블과 커넥터"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 8,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL12",
+        "sectionIndex": 2,
+        "heading": "데이터 링크 계층과 MAC 주소"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 9,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL12",
+        "sectionIndex": 3,
+        "heading": "스위치의 MAC 학습과 전달"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 10,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL12",
+        "sectionIndex": 3,
+        "heading": "스위치의 MAC 학습과 전달"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 11,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL12",
+        "sectionIndex": 3,
+        "heading": "스위치의 MAC 학습과 전달"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 12,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL12",
+        "sectionIndex": 4,
+        "heading": "네트워크 계층: IPv4와 클래스"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 13,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL12",
+        "sectionIndex": 4,
+        "heading": "네트워크 계층: IPv4와 클래스"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 14,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL12",
+        "sectionIndex": 5,
+        "heading": "라우터·게이트웨이와 다음 홉"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 15,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL12",
+        "sectionIndex": 5,
+        "heading": "라우터·게이트웨이와 다음 홉"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 16,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL12",
+        "sectionIndex": 5,
+        "heading": "라우터·게이트웨이와 다음 홉"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 17,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL12",
+        "sectionIndex": 5,
+        "heading": "라우터·게이트웨이와 다음 홉"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 18,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL12",
+        "sectionIndex": 6,
+        "heading": "전송 계층: 포트와 연결 상태"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 19,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL12",
+        "sectionIndex": 6,
+        "heading": "전송 계층: 포트와 연결 상태"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 20,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL12",
+        "sectionIndex": 6,
+        "heading": "전송 계층: 포트와 연결 상태"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 21,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL13",
+        "sectionIndex": 0,
+        "heading": "TCP의 3-way handshake"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 22,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL13",
+        "sectionIndex": 1,
+        "heading": "TCP 연결 종료와 상태 변화"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 23,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL13",
+        "sectionIndex": 2,
+        "heading": "TCP와 UDP 비교"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 24,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL13",
+        "sectionIndex": 3,
+        "heading": "세션·표현·응용 계층"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 25,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL13",
+        "sectionIndex": 4,
+        "heading": "계층·주소·공격 지점 연결"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 26,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL14",
+        "sectionIndex": 0,
+        "heading": "DoS의 목적과 두 분류"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 27,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL14",
+        "sectionIndex": 0,
+        "heading": "DoS의 목적과 두 분류"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 28,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL14",
+        "sectionIndex": 1,
+        "heading": "보잉크·봉크·티어드롭: IP 단편 재조립"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 29,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL14",
+        "sectionIndex": 1,
+        "heading": "보잉크·봉크·티어드롭: IP 단편 재조립"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 30,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL14",
+        "sectionIndex": 2,
+        "heading": "Land 공격"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 31,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL14",
+        "sectionIndex": 3,
+        "heading": "Ping of Death와 크기·재조립 문제"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 32,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL14",
+        "sectionIndex": 4,
+        "heading": "SYN flooding"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 33,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL15",
+        "sectionIndex": 0,
+        "heading": "HTTP GET flooding"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 34,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL15",
+        "sectionIndex": 1,
+        "heading": "HTTP CC·동적 요청·느린 요청"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 35,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL15",
+        "sectionIndex": 2,
+        "heading": "Smurf의 반사·증폭 과정"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 36,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL15",
+        "sectionIndex": 2,
+        "heading": "Smurf의 반사·증폭 과정"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 37,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL15",
+        "sectionIndex": 2,
+        "heading": "Smurf의 반사·증폭 과정"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 38,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL15",
+        "sectionIndex": 3,
+        "heading": "메일 폭탄과 DDoS의 역할"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 39,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL15",
+        "sectionIndex": 3,
+        "heading": "메일 폭탄과 DDoS의 역할"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 40,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL15",
+        "sectionIndex": 4,
+        "heading": "봇넷의 형성과 공격 흐름"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 41,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL15",
+        "sectionIndex": 4,
+        "heading": "봇넷의 형성과 공격 흐름"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 42,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL15",
+        "sectionIndex": 5,
+        "heading": "고갈되는 자원에 맞춘 대응"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 43,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL16",
+        "sectionIndex": 0,
+        "heading": "스니핑의 개념"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 44,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL16",
+        "sectionIndex": 1,
+        "heading": "NIC 필터와 promiscuous 모드"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 45,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL16",
+        "sectionIndex": 1,
+        "heading": "NIC 필터와 promiscuous 모드"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 46,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL16",
+        "sectionIndex": 2,
+        "heading": "스위치 재밍(MACOF)과 SPAN·태핑"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 47,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL16",
+        "sectionIndex": 3,
+        "heading": "ping·ARP·DNS 반응을 이용한 탐지"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 48,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL16",
+        "sectionIndex": 3,
+        "heading": "ping·ARP·DNS 반응을 이용한 탐지"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 49,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL16",
+        "sectionIndex": 4,
+        "heading": "유인 정보와 ARPwatch"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 50,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL17",
+        "sectionIndex": 0,
+        "heading": "ARP 스푸핑의 정상·위조 흐름"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 51,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL17",
+        "sectionIndex": 0,
+        "heading": "ARP 스푸핑의 정상·위조 흐름"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 52,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL17",
+        "sectionIndex": 0,
+        "heading": "ARP 스푸핑의 정상·위조 흐름"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 53,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL17",
+        "sectionIndex": 1,
+        "heading": "IP 스푸핑과 과거의 r 신뢰 관계"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 54,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL17",
+        "sectionIndex": 1,
+        "heading": "IP 스푸핑과 과거의 r 신뢰 관계"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 55,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL17",
+        "sectionIndex": 1,
+        "heading": "IP 스푸핑과 과거의 r 신뢰 관계"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 56,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL17",
+        "sectionIndex": 2,
+        "heading": "ICMP Redirect: 정상 경로 안내와 위조"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 57,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL17",
+        "sectionIndex": 2,
+        "heading": "ICMP Redirect: 정상 경로 안내와 위조"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 58,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL17",
+        "sectionIndex": 3,
+        "heading": "DNS 스푸핑: 이름과 응답의 위조"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 59,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL17",
+        "sectionIndex": 3,
+        "heading": "DNS 스푸핑: 이름과 응답의 위조"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 60,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL17",
+        "sectionIndex": 3,
+        "heading": "DNS 스푸핑: 이름과 응답의 위조"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 61,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL17",
+        "sectionIndex": 3,
+        "heading": "DNS 스푸핑: 이름과 응답의 위조"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 62,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL17",
+        "sectionIndex": 4,
+        "heading": "캐시 오염과 hosts 파일의 범위"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 63,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL17",
+        "sectionIndex": 4,
+        "heading": "캐시 오염과 hosts 파일의 범위"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 64,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL18",
+        "sectionIndex": 0,
+        "heading": "정상 연결을 가로채는 개념"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 65,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL18",
+        "sectionIndex": 1,
+        "heading": "TCP 상태와 RST의 의미"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 66,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL18",
+        "sectionIndex": 2,
+        "heading": "웹 세션 토큰과 TCP 연결의 구분"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 67,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL19",
+        "sectionIndex": 0,
+        "heading": "AP와 전파 범위·안테나"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 68,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL19",
+        "sectionIndex": 0,
+        "heading": "AP와 전파 범위·안테나"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 69,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL19",
+        "sectionIndex": 1,
+        "heading": "PPT의 주요 802.11 프로토콜 표"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 70,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL19",
+        "sectionIndex": 2,
+        "heading": "AP의 기본 보안 설정"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 71,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL19",
+        "sectionIndex": 3,
+        "heading": "WEP의 구조·공유키 인증·취약점"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 72,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL19",
+        "sectionIndex": 3,
+        "heading": "WEP의 구조·공유키 인증·취약점"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 73,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL19",
+        "sectionIndex": 3,
+        "heading": "WEP의 구조·공유키 인증·취약점"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 74,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL19",
+        "sectionIndex": 4,
+        "heading": "WPA·WPA2와 인증 방식의 두 축"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 75,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL19",
+        "sectionIndex": 5,
+        "heading": "802.1X와 RADIUS 인증 흐름"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 76,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL19",
+        "sectionIndex": 5,
+        "heading": "802.1X와 RADIUS 인증 흐름"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 77,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL19",
+        "sectionIndex": 6,
+        "heading": "무선 보안 선택의 종합"
+      }
+    ]
+  },
+  {
+    "sourceId": "P3",
+    "page": 78,
+    "kind": "frontmatter",
+    "reason": "마무리",
+    "sections": []
+  },
+  {
+    "sourceId": "P4",
+    "page": 1,
+    "kind": "frontmatter",
+    "reason": "표지",
+    "sections": []
+  },
+  {
+    "sourceId": "P4",
+    "page": 2,
+    "kind": "frontmatter",
+    "reason": "목차",
+    "sections": []
+  },
+  {
+    "sourceId": "P4",
+    "page": 3,
+    "kind": "frontmatter",
+    "reason": "학습목표",
+    "sections": []
+  },
+  {
+    "sourceId": "P4",
+    "page": 4,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL20",
+        "sectionIndex": 0,
+        "heading": "웹의 시작과 하이퍼텍스트"
+      }
+    ]
+  },
+  {
+    "sourceId": "P4",
+    "page": 5,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL20",
+        "sectionIndex": 1,
+        "heading": "HTTP Request와 메서드"
+      }
+    ]
+  },
+  {
+    "sourceId": "P4",
+    "page": 6,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL20",
+        "sectionIndex": 1,
+        "heading": "HTTP Request와 메서드"
+      }
+    ]
+  },
+  {
+    "sourceId": "P4",
+    "page": 7,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL20",
+        "sectionIndex": 2,
+        "heading": "HTTP Response와 상태 코드"
+      }
+    ]
+  },
+  {
+    "sourceId": "P4",
+    "page": 8,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL20",
+        "sectionIndex": 3,
+        "heading": "GET·POST의 값과 HTTPS"
+      }
+    ]
+  },
+  {
+    "sourceId": "P4",
+    "page": 9,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL20",
+        "sectionIndex": 4,
+        "heading": "프런트엔드: HTML·CSS·JavaScript"
+      }
+    ]
+  },
+  {
+    "sourceId": "P4",
+    "page": 10,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL20",
+        "sectionIndex": 4,
+        "heading": "프런트엔드: HTML·CSS·JavaScript"
+      }
+    ]
+  },
+  {
+    "sourceId": "P4",
+    "page": 11,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL20",
+        "sectionIndex": 5,
+        "heading": "백엔드와 REST API"
+      }
+    ]
+  },
+  {
+    "sourceId": "P4",
+    "page": 12,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL21",
+        "sectionIndex": 0,
+        "heading": "스캐너와 Burp Suite 프록시의 위치"
+      }
+    ]
+  },
+  {
+    "sourceId": "P4",
+    "page": 13,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL21",
+        "sectionIndex": 0,
+        "heading": "스캐너와 Burp Suite 프록시의 위치"
+      }
+    ]
+  },
+  {
+    "sourceId": "P4",
+    "page": 14,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL21",
+        "sectionIndex": 0,
+        "heading": "스캐너와 Burp Suite 프록시의 위치"
+      }
+    ]
+  },
+  {
+    "sourceId": "P4",
+    "page": 15,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL21",
+        "sectionIndex": 0,
+        "heading": "스캐너와 Burp Suite 프록시의 위치"
+      }
+    ]
+  },
+  {
+    "sourceId": "P4",
+    "page": 16,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL21",
+        "sectionIndex": 0,
+        "heading": "스캐너와 Burp Suite 프록시의 위치"
+      }
+    ]
+  },
+  {
+    "sourceId": "P4",
+    "page": 17,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL21",
+        "sectionIndex": 1,
+        "heading": "응답 변조와 브라우저에 보이는 값"
+      }
+    ]
+  },
+  {
+    "sourceId": "P4",
+    "page": 18,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL21",
+        "sectionIndex": 1,
+        "heading": "응답 변조와 브라우저에 보이는 값"
+      }
+    ]
+  },
+  {
+    "sourceId": "P4",
+    "page": 19,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL21",
+        "sectionIndex": 1,
+        "heading": "응답 변조와 브라우저에 보이는 값"
+      }
+    ]
+  },
+  {
+    "sourceId": "P4",
+    "page": 20,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL21",
+        "sectionIndex": 1,
+        "heading": "응답 변조와 브라우저에 보이는 값"
+      }
+    ]
+  },
+  {
+    "sourceId": "P4",
+    "page": 21,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL21",
+        "sectionIndex": 1,
+        "heading": "응답 변조와 브라우저에 보이는 값"
+      }
+    ]
+  },
+  {
+    "sourceId": "P4",
+    "page": 22,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL21",
+        "sectionIndex": 2,
+        "heading": "왕복하는 값을 서버가 다시 믿는 문제"
+      }
+    ]
+  },
+  {
+    "sourceId": "P4",
+    "page": 23,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL21",
+        "sectionIndex": 2,
+        "heading": "왕복하는 값을 서버가 다시 믿는 문제"
+      }
+    ]
+  },
+  {
+    "sourceId": "P4",
+    "page": 24,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL21",
+        "sectionIndex": 3,
+        "heading": "요청 매개변수와 객체 권한"
+      }
+    ]
+  },
+  {
+    "sourceId": "P4",
+    "page": 25,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL21",
+        "sectionIndex": 3,
+        "heading": "요청 매개변수와 객체 권한"
+      }
+    ]
+  },
+  {
+    "sourceId": "P4",
+    "page": 26,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL21",
+        "sectionIndex": 4,
+        "heading": "검색 엔진을 이용한 노출 정보 확인"
+      }
+    ]
+  },
+  {
+    "sourceId": "P4",
+    "page": 27,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL21",
+        "sectionIndex": 4,
+        "heading": "검색 엔진을 이용한 노출 정보 확인"
+      }
+    ]
+  },
+  {
+    "sourceId": "P4",
+    "page": 28,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL21",
+        "sectionIndex": 4,
+        "heading": "검색 엔진을 이용한 노출 정보 확인"
+      }
+    ]
+  },
+  {
+    "sourceId": "P4",
+    "page": 29,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL21",
+        "sectionIndex": 5,
+        "heading": "robots.txt의 역할과 한계"
+      }
+    ]
+  },
+  {
+    "sourceId": "P4",
+    "page": 30,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL21",
+        "sectionIndex": 6,
+        "heading": "OWASP 취약점 분류의 도입"
+      }
+    ]
+  },
+  {
+    "sourceId": "P4",
+    "page": 31,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL22",
+        "sectionIndex": 0,
+        "heading": "인젝션의 공통 원리"
+      }
+    ]
+  },
+  {
+    "sourceId": "P4",
+    "page": 32,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL22",
+        "sectionIndex": 1,
+        "heading": "정상 로그인과 문자열 결합 코드 읽기"
+      }
+    ]
+  },
+  {
+    "sourceId": "P4",
+    "page": 33,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL22",
+        "sectionIndex": 1,
+        "heading": "정상 로그인과 문자열 결합 코드 읽기"
+      }
+    ]
+  },
+  {
+    "sourceId": "P4",
+    "page": 34,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL22",
+        "sectionIndex": 2,
+        "heading": "항상 참인 조건과 적용 지점"
+      }
+    ]
+  },
+  {
+    "sourceId": "P4",
+    "page": 35,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL22",
+        "sectionIndex": 2,
+        "heading": "항상 참인 조건과 적용 지점"
+      }
+    ]
+  },
+  {
+    "sourceId": "P4",
+    "page": 36,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL22",
+        "sectionIndex": 3,
+        "heading": "매개변수화와 서버 검증"
+      }
+    ]
+  },
+  {
+    "sourceId": "P4",
+    "page": 37,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL23",
+        "sectionIndex": 0,
+        "heading": "인증 실패와 객체 접근 제어"
+      }
+    ]
+  },
+  {
+    "sourceId": "P4",
+    "page": 38,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL23",
+        "sectionIndex": 0,
+        "heading": "인증 실패와 객체 접근 제어"
+      }
+    ]
+  },
+  {
+    "sourceId": "P4",
+    "page": 39,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL23",
+        "sectionIndex": 1,
+        "heading": "저장형 XSS의 단계와 피해"
+      }
+    ]
+  },
+  {
+    "sourceId": "P4",
+    "page": 40,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL23",
+        "sectionIndex": 1,
+        "heading": "저장형 XSS의 단계와 피해"
+      }
+    ]
+  },
+  {
+    "sourceId": "P4",
+    "page": 41,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL23",
+        "sectionIndex": 1,
+        "heading": "저장형 XSS의 단계와 피해"
+      }
+    ]
+  },
+  {
+    "sourceId": "P4",
+    "page": 42,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL23",
+        "sectionIndex": 1,
+        "heading": "저장형 XSS의 단계와 피해"
+      }
+    ]
+  },
+  {
+    "sourceId": "P4",
+    "page": 43,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL23",
+        "sectionIndex": 2,
+        "heading": "접근 제어와 경로 탐색"
+      }
+    ]
+  },
+  {
+    "sourceId": "P4",
+    "page": 44,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL23",
+        "sectionIndex": 2,
+        "heading": "접근 제어와 경로 탐색"
+      }
+    ]
+  },
+  {
+    "sourceId": "P4",
+    "page": 45,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL23",
+        "sectionIndex": 2,
+        "heading": "접근 제어와 경로 탐색"
+      }
+    ]
+  },
+  {
+    "sourceId": "P4",
+    "page": 46,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL23",
+        "sectionIndex": 3,
+        "heading": "디렉터리 목록·백업·주석·업로드"
+      }
+    ]
+  },
+  {
+    "sourceId": "P4",
+    "page": 47,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL23",
+        "sectionIndex": 3,
+        "heading": "디렉터리 목록·백업·주석·업로드"
+      }
+    ]
+  },
+  {
+    "sourceId": "P4",
+    "page": 48,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL23",
+        "sectionIndex": 4,
+        "heading": "리버스 텔넷과 역방향 연결"
+      }
+    ]
+  },
+  {
+    "sourceId": "P4",
+    "page": 49,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL23",
+        "sectionIndex": 4,
+        "heading": "리버스 텔넷과 역방향 연결"
+      }
+    ]
+  },
+  {
+    "sourceId": "P4",
+    "page": 50,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL23",
+        "sectionIndex": 5,
+        "heading": "민감정보 노출과 공격 탐지·대응"
+      }
+    ]
+  },
+  {
+    "sourceId": "P4",
+    "page": 51,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL24",
+        "sectionIndex": 0,
+        "heading": "CSRF의 성립 조건"
+      }
+    ]
+  },
+  {
+    "sourceId": "P4",
+    "page": 52,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL24",
+        "sectionIndex": 1,
+        "heading": "PPT의 자동 제출 폼과 구성요소·API 위험"
+      }
+    ]
+  },
+  {
+    "sourceId": "P4",
+    "page": 53,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL24",
+        "sectionIndex": 2,
+        "heading": "XSS와 CSRF의 차이와 요청 검증"
+      }
+    ]
+  },
+  {
+    "sourceId": "P4",
+    "page": 54,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL24",
+        "sectionIndex": 3,
+        "heading": "출력 문맥에 맞춘 XSS 방어"
+      }
+    ]
+  },
+  {
+    "sourceId": "P4",
+    "page": 55,
+    "kind": "content",
+    "reason": null,
+    "sections": [
+      {
+        "lessonId": "SL24",
+        "sectionIndex": 4,
+        "heading": "입력·인증·권한·세션의 종합 대책"
+      }
+    ]
+  },
+  {
+    "sourceId": "P4",
+    "page": 56,
+    "kind": "frontmatter",
+    "reason": "마무리",
+    "sections": []
+  }
+]

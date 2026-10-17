@@ -29,9 +29,9 @@ export function LessonPrimer({ lesson }: { lesson: Lesson }) {
 
 export function WorkedExamples({ lesson }: { lesson: Lesson }) {
   return (
-    <section id="worked">
+    <section id={`worked-${lesson.id}`}>
       <span className="eyebrow">WORKED EXAMPLES</span>
-      <h2>증거와 조건을 함께 읽는 풀이</h2>
+      <h2>직접 만든 가상 사례 풀이</h2>
       {lesson.walkthrough.map((p, i) => <p key={i}>{p}</p>)}
       {lesson.workedExamples.map((example, i) => {
         const data = caseMap[example.caseId];
@@ -71,9 +71,9 @@ export function WorkedExamples({ lesson }: { lesson: Lesson }) {
 export function LessonLab({ lesson }: { lesson: Lesson }) {
   if (!lesson.microLab) return null;
   return (
-    <section id="lab">
+    <section id={`lab-${lesson.id}`}>
       <span className="eyebrow">INPUT → OUTPUT</span>
-      <h2>수업 코드의 출력 확인</h2>
+      <h2>추가 예제 · 가상 입력의 출력 확인</h2>
       <p>{lesson.microLab.kind} · 강의 개념을 작은 가상 입력으로 재구성했습니다. 검산 문서에서 실행 조건과 결과를 확인할 수 있습니다.</p>
       <p className="muted">먼저 각 변수와 연산 뒤에 남는 값을 예상한 뒤 출력과 비교하세요.</p>
       <Code code={lesson.microLab.code} notes={lesson.microLab.notes} />

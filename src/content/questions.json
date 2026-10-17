@@ -228,7 +228,7 @@
       "선지별 이유에서 다른 보기가 왜 조건에 맞지 않는지 대조합니다."
     ],
     "commonError": "승인하지 않은 대상·행위입니다.",
-    "lessonId": "SL01",
+    "lessonId": "SL03",
     "sources": [
       {
         "sourceId": "P1",
@@ -279,7 +279,7 @@
       "운영 DB 복사와 외부 스캔 두 행입니다. 단위는 개입니다."
     ],
     "commonError": "제시한 범위를 넘어 결론내리지 않습니다.",
-    "lessonId": "SL01",
+    "lessonId": "SL03",
     "sources": [
       {
         "sourceId": "P1",
@@ -320,7 +320,7 @@
       "주어진 범위 밖 정책이나 공격 성공은 추가 증거로 확인합니다."
     ],
     "commonError": "제시한 범위를 넘어 결론내리지 않습니다.",
-    "lessonId": "SL01",
+    "lessonId": "SL03",
     "sources": [
       {
         "sourceId": "P1",
@@ -352,7 +352,7 @@
       "선지별 이유에서 다른 보기가 왜 조건에 맞지 않는지 대조합니다."
     ],
     "commonError": "필요 증거와 허가 범위를 넘습니다.",
-    "lessonId": "SL01",
+    "lessonId": "SL03",
     "sources": [
       {
         "sourceId": "P1",
@@ -403,7 +403,7 @@
       "주어진 범위 밖 정책이나 공격 성공은 추가 증거로 확인합니다."
     ],
     "commonError": "제시한 범위를 넘어 결론내리지 않습니다.",
-    "lessonId": "SL01",
+    "lessonId": "SL03",
     "sources": [
       {
         "sourceId": "P1",
@@ -659,7 +659,7 @@
       "선지별 이유에서 다른 보기가 왜 조건에 맞지 않는지 대조합니다."
     ],
     "commonError": "음성은 단독 신원 근거가 부족합니다.",
-    "lessonId": "SL03",
+    "lessonId": "SL02",
     "sources": [
       {
         "sourceId": "P1",
@@ -711,7 +711,7 @@
       "주어진 범위 밖 정책이나 공격 성공은 추가 증거로 확인합니다."
     ],
     "commonError": "제시한 범위를 넘어 결론내리지 않습니다.",
-    "lessonId": "SL03",
+    "lessonId": "SL02",
     "sources": [
       {
         "sourceId": "P1",
@@ -745,7 +745,7 @@
       "선지별 이유에서 다른 보기가 왜 조건에 맞지 않는지 대조합니다."
     ],
     "commonError": "복구 시험은 외부 사본에 영향을 주지 않습니다.",
-    "lessonId": "SL03",
+    "lessonId": "SL02",
     "sources": [
       {
         "sourceId": "P1",
@@ -797,7 +797,7 @@
       "음성 요청과 문서 속 지시 두 행입니다. 단위는 개입니다."
     ],
     "commonError": "제시한 범위를 넘어 결론내리지 않습니다.",
-    "lessonId": "SL03",
+    "lessonId": "SL02",
     "sources": [
       {
         "sourceId": "P1",
@@ -839,7 +839,7 @@
       "주어진 범위 밖 정책이나 공격 성공은 추가 증거로 확인합니다."
     ],
     "commonError": "제시한 범위를 넘어 결론내리지 않습니다.",
-    "lessonId": "SL03",
+    "lessonId": "SL02",
     "sources": [
       {
         "sourceId": "P1",
@@ -6507,7 +6507,7 @@
       "선지별 이유에서 다른 보기가 왜 조건에 맞지 않는지 대조합니다."
     ],
     "commonError": "HTML 해석 경계가 생깁니다.",
-    "lessonId": "SL24",
+    "lessonId": "SL23",
     "sources": [
       {
         "sourceId": "P4",
@@ -6561,7 +6561,7 @@
       "주어진 범위 밖 정책이나 공격 성공은 추가 증거로 확인합니다."
     ],
     "commonError": "제시한 범위를 넘어 결론내리지 않습니다.",
-    "lessonId": "SL24",
+    "lessonId": "SL23",
     "sources": [
       {
         "sourceId": "P4",
@@ -6597,7 +6597,7 @@
       "선지별 이유에서 다른 보기가 왜 조건에 맞지 않는지 대조합니다."
     ],
     "commonError": "HttpOnly의 역할과 다릅니다.",
-    "lessonId": "SL24",
+    "lessonId": "SL23",
     "sources": [
       {
         "sourceId": "P4",
@@ -6651,7 +6651,7 @@
       "주어진 범위 밖 정책이나 공격 성공은 추가 증거로 확인합니다."
     ],
     "commonError": "제시한 범위를 넘어 결론내리지 않습니다.",
-    "lessonId": "SL24",
+    "lessonId": "SL23",
     "sources": [
       {
         "sourceId": "P4",
@@ -6689,7 +6689,7 @@
       "주어진 범위 밖 정책이나 공격 성공은 추가 증거로 확인합니다."
     ],
     "commonError": "제시한 범위를 넘어 결론내리지 않습니다.",
-    "lessonId": "SL24",
+    "lessonId": "SL23",
     "sources": [
       {
         "sourceId": "P4",

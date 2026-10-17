@@ -7,10 +7,11 @@ import type {
   LocalUser,
   Profile,
   Session,
+  TopicId,
   WrongNote,
 } from "./types";
 import { grade, scoreDraft } from "./engine";
-import { lessonMap, questionMap } from "./content";
+import { lessons, lessonMap, questionMap } from "./content";
 
 export const DB_NAME = "computer-security-cbt:v1";
 export const SESSION_KEY = "computer-security-cbt:tab-session:v1";
@@ -392,6 +393,20 @@ export async function readLesson(
         createdAt: s,
         updatedAt: s,
       });
+  });
+}
+
+export async function readChapter(owner: string, topic: TopicId, completed: boolean) {
+  const members=lessons.filter(l=>l.topic===topic);
+  if (!members.length) throw new Error('강의 범위를 찾을 수 없습니다.');
+  return updateProfile(owner,p=>{
+    const now=new Date().toISOString();
+    for (const l of members) {
+      const old=p.progress.find(x=>x.lessonId===l.id);
+      if (old) { old.completed=completed; old.updatedAt=now; }
+      else p.progress.push({userId:owner,lessonId:l.id,completed,createdAt:now,updatedAt:now});
+    }
+    p.lastLessonId=members[0].id;
   });
 }
 
