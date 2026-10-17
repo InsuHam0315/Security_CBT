@@ -2,6 +2,8 @@
 
 회원가입은 현재 브라우저에 개인 학습 프로필을 만듭니다. 이메일·외부 서버·유료 API가 필요하지 않습니다. 로그인 전에도 게스트로 학습할 수 있습니다.
 
+기록은 브라우저와 출처(프로토콜·도메인·포트)에 연결됩니다. 기존 `insuham0315.github.io`와 새 `ist-security.kro.kr`의 로컬 기록은 서로 독립적입니다. 도메인을 바꿔도 기존 출처의 데이터를 삭제하지 않으며, 다른 출처에서 계속 쓰려면 학습 기록 JSON 백업을 가져옵니다. HTTP와 HTTPS도 출처가 다르므로 새 도메인에서는 HTTPS 주소를 사용하세요.
+
 ## 저장과 사용자 전환
 
 IndexedDB `computer-security-cbt:v1`의 `users`와 `profiles` 저장소를 사용합니다. 탭 로그인은 sessionStorage `computer-security-cbt:tab-session:v1`, 기록 변경 알림은 BroadcastChannel `computer-security-cbt:changes`입니다. 빅데이터 사이트의 DB·키·계정은 열지 않습니다.

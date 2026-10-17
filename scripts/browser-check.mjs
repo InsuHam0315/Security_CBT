@@ -2,7 +2,7 @@
 import {chromium} from 'playwright';
 import assert from 'node:assert/strict';
 import {mkdir,writeFile} from 'node:fs/promises';
-const base=process.env.CBT_BASE??'http://127.0.0.1:4175/Security_CBT/';
+const base=process.env.CBT_BASE??'http://127.0.0.1:4175/';
 const browser=await chromium.launch(process.platform==='win32'?{channel:'msedge',headless:true}:{headless:true});
 const report={base,viewports:[],errors:[],backup:[],menu:[]};
 await mkdir('test-results',{recursive:true});

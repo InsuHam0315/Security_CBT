@@ -1,5 +1,11 @@
 # 정답·계산·코드·기능 검증
 
+## 2026-10-17 커스텀 도메인 경로 수정
+
+`ist-security.kro.kr` CNAME이 `insuham0315.github.io`를 가리키며 GitHub Pages DNS 검사에서 유효함을 확인했습니다. PC DNS 캐시 초기화 후 시스템 DNS 조회도 정상화했습니다. 사이트의 기존 `/Security_CBT/` base와 고정 favicon 경로를 루트(`/`) 배포에 맞췄습니다. HTML의 favicon은 Vite `%BASE_URL%`를 사용합니다. 개발·미리보기·CI 브라우저 검사 주소를 같은 루트로 맞추고 필요할 때 `VITE_BASE_PATH`, `CBT_BASE`로 다른 경로를 검사할 수 있습니다.
+
+수정한 로컬 production 빌드에서 TypeScript·콘텐츠 검사·11개 단위 테스트·320/390/768/1440px의 400경로·백업·키보드 검사 통과. 브라우저 콘솔·페이지·HTTP 오류 및 가로 넘침 0. GitHub의 기존 HTTPS 인증서 `bad_authz` 상태는 동일 도메인 재등록으로 발급을 재요청했습니다. 공개 HTTPS의 발급 완료와 배포 결과는 완료 보고를 참조합니다.
+
 검증일: 2026-10-13 (Asia/Seoul). 개인 프로필을 사용하지 않고 가상 계정과 임시 브라우저 컨텍스트로 검사했습니다.
 
 ## 콘텐츠·독립 검산

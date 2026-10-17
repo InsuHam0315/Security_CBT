@@ -2,8 +2,12 @@
 
 - 저장소: https://github.com/InsuHam0315/Security_CBT
 - 배포 브랜치: `codex/computer-security-cbt`
-- Vite base: `/Security_CBT/`
-- 공개 URL: https://insuham0315.github.io/Security_CBT/
+- Vite base: `/` (환경 변수 `VITE_BASE_PATH`로 다른 경로 빌드 가능)
+- 공개 URL: https://ist-security.kro.kr/
+
+2026-10-17에 내도메인.한국의 `ist-security.kro.kr` CNAME과 GitHub Pages Custom domain 연결에 맞춰 루트 경로로 변경했습니다. DNS의 CNAME 대상은 `insuham0315.github.io`이며 프로토콜·저장소 경로를 붙이지 않습니다. GitHub Pages는 해당 저장소의 Custom domain에 전체 도메인을 설정해야 합니다. 현재 워크플로 배포 방식은 저장소의 CNAME 파일을 사용하지 않습니다.
+
+`ERR_NAME_NOT_RESOLVED`는 DNS 조회 문제입니다. 공개 DNS에서 CNAME과 IP가 정상 조회되는데 특정 브라우저만 실패하면 저장 완료 여부·잠시 전 실패한 DNS 캐시·사용 중인 DNS를 확인합니다. GitHub HTTPS 인증서가 `bad_authz`이면 DNS가 정상인 상태에서 같은 Custom domain을 제거 후 재등록해 인증서 발급을 다시 요청할 수 있습니다. 인증서 발급 후 HTTPS 강제를 켭니다. 관련 절차는 [GitHub 문제 해결 안내](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/troubleshooting-custom-domains-and-github-pages)를 참고합니다.
 
 `HashRouter`로 `#/lessons/SL22` 같은 링크를 제공합니다. GitHub Pages의 서버 경로 재작성 없이 직접 방문·새로고침이 가능합니다. root의 기존 BigData_CBT 앱과 저장소를 공유하지 않습니다.
 
