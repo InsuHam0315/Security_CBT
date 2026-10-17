@@ -135,11 +135,17 @@ export async function updateProfile(
 }
 const hex = (b: Uint8Array) =>
   Array.from(b, (x) => x.toString(16).padStart(2, "0")).join("");
+export function localAuthIssue(): string | null {
+  return globalThis.isSecureContext === false || !globalThis.crypto?.subtle
+    ? "회원가입·로그인은 HTTPS 연결에서만 사용할 수 있습니다. HTTPS 주소에서 다시 열어 주세요."
+    : null;
+}
+function requireLocalAuth() {
+  const issue = localAuthIssue();
+  if (issue) throw new Error(issue);
+}
 async function derive(password: string, salt: string, iterations: number) {
-  if (!crypto.subtle)
-    throw new Error(
-      "로컬 로그인은 HTTPS 또는 localhost의 Web Crypto가 필요합니다.",
-    );
+  requireLocalAuth();
   const key = await crypto.subtle.importKey(
     "raw",
     new TextEncoder().encode(password),
@@ -162,6 +168,7 @@ export async function register(
   displayName: string,
   password: string,
 ): Promise<Session> {
+  requireLocalAuth();
   loginId = loginId.trim().toLowerCase();
   displayName = displayName.trim();
   if (!/^[a-z0-9_-]{3,32}$/.test(loginId))
@@ -202,6 +209,7 @@ export async function login(
   loginId: string,
   password: string,
 ): Promise<Session> {
+  requireLocalAuth();
   if (!loginId.trim() || !password)
     throw new Error("아이디와 비밀번호를 입력하세요.");
   const d = await openDB(),

@@ -8,6 +8,7 @@ import {
   guestSession,
   importBackup,
   login,
+  localAuthIssue,
   migrateGuest,
   register,
   validateBackup,
@@ -24,6 +25,7 @@ export function Auth() {
     [working, setWorking] = useState(false),
     [policy, setPolicy] = useState<"merge" | "replace">("merge"),
     [backup, setBackup] = useState<string | null>(null);
+  const authIssue = localAuthIssue();
   useEffect(() => {
     if (view === "register") setMode("register");
     else if (!view) setMode("login");
@@ -96,6 +98,10 @@ export function Auth() {
           <p>
             현재 사용자: <b>{session.displayName}</b>
           </p>
+          {authIssue && <div className="notice" role="note">
+            <p>{authIssue}</p>
+            {window.location.protocol === "http:" && <a className="button" href={window.location.href.replace(/^http:/, "https:")}>HTTPS로 열기</a>}
+          </div>}
           <div className="segmented">
             <button
               aria-pressed={mode === "login"}
@@ -115,17 +121,23 @@ export function Auth() {
               아이디
               <input
                 autoComplete="username"
+                autoCapitalize="none"
+                spellCheck={false}
+                aria-describedby="login-id-hint"
+                disabled={!!authIssue}
                 required
                 value={loginId}
                 onChange={(e) => setLoginId(e.target.value)}
                 placeholder="영문·숫자·_·- 3~32자"
               />
             </label>
+            <p className="muted" id="login-id-hint">아이디는 영문·숫자·_·- 3~32자입니다. 이메일 주소는 사용할 수 없습니다.</p>
             {mode === "register" && (
               <label>
                 표시 이름
                 <input
                   autoComplete="nickname"
+                  disabled={!!authIssue}
                   required
                   maxLength={30}
                   value={name}
@@ -138,6 +150,7 @@ export function Auth() {
               비밀번호
               <input
                 type="password"
+                disabled={!!authIssue}
                 autoComplete={
                   mode === "register" ? "new-password" : "current-password"
                 }
@@ -157,7 +170,7 @@ export function Auth() {
               />
               게스트 학습 기록을 이 계정에 합치기
             </label>
-            <button className="primary" disabled={working} type="submit">
+            <button className="primary" disabled={working || !!authIssue} type="submit">
               {working
                 ? "확인 중…"
                 : mode === "register"
