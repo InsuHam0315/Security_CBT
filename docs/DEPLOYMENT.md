@@ -2,8 +2,10 @@
 
 - 저장소: https://github.com/InsuHam0315/Security_CBT
 - 배포 브랜치: `codex/computer-security-cbt`
-- Vite base: `/` (환경 변수 `VITE_BASE_PATH`로 다른 경로 빌드 가능)
-- 공개 URL: https://ist-security.kro.kr/
+- Vite base: `/Security_CBT/` (환경 변수 `VITE_BASE_PATH`로 다른 경로 빌드 가능)
+- 공개 URL: https://insuham0315.github.io/Security_CBT/
+
+2026-10-17 사용자의 요청에 따라 인증서 발급이 `bad_authz`로 멈춘 커스텀 도메인 연결을 잠시 해제하고 GitHub 기본 HTTPS 주소로 복구합니다. Vite base, production 미리보기, CI 브라우저 검사 경로를 `/Security_CBT/`로 맞춥니다. 내도메인.한국의 DNS 레코드와 기존 학습 DB는 삭제하지 않습니다. 아래는 커스텀 도메인 연결 당시의 기록입니다.
 
 2026-10-17에 내도메인.한국의 `ist-security.kro.kr` CNAME과 GitHub Pages Custom domain 연결에 맞춰 루트 경로로 변경했습니다. DNS의 CNAME 대상은 `insuham0315.github.io`이며 프로토콜·저장소 경로를 붙이지 않습니다. GitHub Pages는 해당 저장소의 Custom domain에 전체 도메인을 설정해야 합니다. 현재 워크플로 배포 방식은 저장소의 CNAME 파일을 사용하지 않습니다.
 

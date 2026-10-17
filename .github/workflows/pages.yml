@@ -31,7 +31,7 @@ jobs:
         run: |
           npm run preview > /tmp/security-preview.log 2>&1 &
           for i in {1..30}; do
-            if curl -sf http://127.0.0.1:4175/ > /dev/null; then break; fi
+            if curl -sf http://127.0.0.1:4175/Security_CBT/ > /dev/null; then break; fi
             sleep 1
           done
           npm run test:browser

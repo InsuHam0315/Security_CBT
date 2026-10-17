@@ -2,7 +2,7 @@
 
 정보 보안 개론 1~4장 강의를 읽고, 가상 로그·설정·메시지·공격 상황의 증거로 답을 판단하는 시험 대비 정적 웹앱입니다.
 
-- 공개 사이트: https://ist-security.kro.kr/
+- 공개 사이트: https://insuham0315.github.io/Security_CBT/
 - 저장소: https://github.com/InsuHam0315/Security_CBT
 - 작업 브랜치: `codex/computer-security-cbt`
 - 24강의 · 32사례 · 160고유 문항 · 종합 5회차(각 50문항·75분)
@@ -21,7 +21,7 @@ npm ci
 npm run dev
 ```
 
-개발 주소: `http://127.0.0.1:5175/`
+개발 주소: `http://127.0.0.1:5175/Security_CBT/`
 
 ```sh
 npm run validate
@@ -31,9 +31,9 @@ npm run build
 npm run preview
 ```
 
-배포 빌드 미리보기: `http://127.0.0.1:4175/`
+배포 빌드 미리보기: `http://127.0.0.1:4175/Security_CBT/`
 
-커스텀 도메인 `ist-security.kro.kr`의 루트(`/`)에 배포합니다. 원래 GitHub 프로젝트 경로용 빌드가 필요하면 환경 변수 `VITE_BASE_PATH=/Security_CBT/`로 빌드하고, 브라우저 검사 주소도 `CBT_BASE`로 지정합니다.
+커스텀 도메인의 인증서 발급 오류로 2026-10-17에 GitHub 기본 HTTPS 주소로 임시 복구했습니다. Vite base는 `/Security_CBT/`입니다. 추후 커스텀 도메인 루트용 빌드는 환경 변수 `VITE_BASE_PATH=/`로 지정하고, 브라우저 검사 주소도 `CBT_BASE`로 맞춥니다.
 
 미리보기를 별도 터미널에서 실행한 상태로 `npm run test:browser`를 실행합니다. Windows에서는 설치된 Edge를 사용하고, 다른 환경에서는 `npx playwright install --with-deps chromium`으로 테스트용 Chromium을 설치합니다. 기존 브라우저 프로필을 열지 않는 임시 컨텍스트에서 검사합니다.
 
