@@ -15,7 +15,7 @@ import {
   cases,
   lessonMap,
   questionMap,
-  topics,
+  allTopics,
 } from "../content";
 import type { Attempt, Question, ExamDraft } from "../types";
 import { grade, topicStats } from "../engine";
@@ -26,6 +26,7 @@ import {
 } from "../storage";
 import { Materials, Sources } from "../components/Materials";
 import { AnswerInput } from "../components/AnswerInput";
+import { PastMaterial, PastProvenance } from '../components/PastQuestion';
 export function answerText(q: Question, value: string | undefined) {
   return !value?.trim()
     ? "미응답"
@@ -75,11 +76,12 @@ export function Explanation({ q, answer }: { q: Question; answer?: string }) {
         </>
       )}
       <p className="mistake-note">흔한 오류: {q.commonError}</p>
-      <Link className="button" to={`/lessons/${q.lessonId}`}>
+      <PastProvenance q={q} explanation />
+      {q.lessonId && <Link className="button" to={`/lessons/${q.lessonId}`}>
         연결 강의 · {lessonMap[q.lessonId].title}
         <ArrowRight size={14} />
-      </Link>
-      <Sources refs={q.sources} />
+      </Link>}
+      {q.past ? <Link className="button" to="/past-exams">족보 문제집으로</Link> : <Sources refs={q.sources} />}
     </div>
   );
 }
@@ -106,6 +108,9 @@ export function Quiz() {
     if (draft?.mode === "exam" && draft.endsAt !== null && now >= draft.endsAt)
       void finish(true);
   }, [now, draft?.id]);
+  useEffect(() => {
+    if (draft?.questionIds[draft.index]?.startsWith('PQ-')) window.scrollTo(0, 0);
+  }, [draft?.id, draft?.index]);
   if (!draft)
     return (
       <div className="empty">
@@ -179,7 +184,7 @@ export function Quiz() {
             : "전체 제출 후 오답·기록 저장"}
         </span>
       </div>
-      <div className="mobile-quiz-tabs">
+      {!q.past && <div className="mobile-quiz-tabs">
         <button
           aria-pressed={mobileView === "question"}
           onClick={() => setMobileView("question")}
@@ -192,16 +197,16 @@ export function Quiz() {
         >
           공통 자료
         </button>
-      </div>
-      <div className="quiz-layout">
-        <div
+      </div>}
+      <div className={`quiz-layout ${q.past ? 'past-quiz-layout' : ''}`}>
+        {!q.past && <div
           className={`quiz-material ${mobileView === "data" ? "show-mobile" : ""}`}
         >
           <Materials key={data.id} data={data} />
           <Sources refs={data.sources} />
-        </div>
+        </div>}
         <div
-          className={`quiz-question ${mobileView === "question" ? "show-mobile" : ""}`}
+          className={`quiz-question ${q.past || mobileView === "question" ? "show-mobile" : ""}`}
         >
           <section className="panel question-panel">
             <div className="question-top">
@@ -217,6 +222,8 @@ export function Quiz() {
               <span className="tag">{q.skill}</span>
             </div>
             <h2>{q.stem}</h2>
+            <PastProvenance q={q} />
+            <PastMaterial q={q} />
             {q.kind === "choice" ? (
               <fieldset className="choices">
                 <legend className="sr-only">정답 선택</legend>
@@ -245,7 +252,7 @@ export function Quiz() {
                 {q.kind === "numeric"
                   ? `${q.numeric!.unit} · ${q.numeric!.rounding} · 허용 오차 ±${q.numeric!.tolerance}`
                   : q.kind === "essay"
-                    ? "근거와 해석 한계를 2~4문장으로 적어 보세요."
+                    ? q.past ? "질문의 모든 항목과 계산 근거를 적어 보세요. 제출 후 채점 요소로 자기 평가합니다." : "근거와 해석 한계를 2~4문장으로 적어 보세요."
                     : "지정된 용어로 짧게 입력하세요."}
                 <AnswerInput key={`${draft.userId}:${draft.id}:${q.id}`}
                   kind={q.kind} savedValue={answer} onSave={setAnswer} />
@@ -429,12 +436,12 @@ export function Results() {
         <Link className="button" to="/records">
           내 기록
         </Link>
-        <Link className="button primary" to="/cbt">
-          종합 회차 선택
+        <Link className="button primary" to={a.questionIds.some(id=>questionMap[id].past)?'/past-exams':'/cbt'}>
+          문제집 선택
         </Link>
         {round && <Link className="button" to={`${a.mode === "exam" ? "/mock" : "/cbt"}/${round.id}`}>같은 회차 다시 풀기</Link>}
       </div>
-      <section className="panel"><h2>이번 응시의 주제별 결과</h2>{topics.map((t) => <div className="weakness-row" key={t.id}><span>{t.title}</span>{stats[t.id] ? <><b>{stats[t.id].correct}/{stats[t.id].total} 정답</b><Link to={`/lessons?topic=${t.id}`}>강의 복습 →</Link></> : <small>채점된 응답 없음</small>}</div>)}<p className="muted">자기 평가 대기 응답은 평가를 마친 뒤 포함됩니다.</p></section>
+      <section className="panel"><h2>이번 응시의 주제별 결과</h2>{allTopics.filter(t=>a.questionIds.some(id=>questionMap[id].topic===t.id)).map((t) => <div className="weakness-row" key={t.id}><span>{t.title}</span>{stats[t.id] ? <><b>{stats[t.id].correct}/{stats[t.id].total} 정답</b><Link to={a.questionIds.some(id=>questionMap[id].past)?'/past-exams?view=all':`/lessons?topic=${t.id}`}>범위 복습 →</Link></> : <small>채점된 응답 없음</small>}</div>)}<p className="muted">자기 평가 대기 응답은 평가를 마친 뒤 포함됩니다.</p></section>
       <div className="filters">
         <label>
           결과 보기
@@ -460,10 +467,10 @@ export function Results() {
               <BookmarkButton targetId={qid} kind="question" />
             </div>
             <h2>{q.stem}</h2>
-            <details>
+            {q.past ? <PastMaterial q={q}/> : <details>
               <summary>공통 자료 다시 보기 · {caseMap[q.caseId].title}</summary>
               <Materials data={caseMap[q.caseId]} />
-            </details>
+            </details>}
             <Explanation q={q} answer={a.answers[qid] ?? ""} />
             {q.kind === "essay" && a.answers[qid]?.trim() && (
               <div className="actions">

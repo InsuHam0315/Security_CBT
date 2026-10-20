@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { BookOpen, ChartNoAxesCombined, Check, ChevronDown, CircleUserRound, ClipboardList, FlaskConical, House, Layers, Target, Timer } from "lucide-react";
 import { blueprints, cases, lessons, topics } from "../content";
 import { useStudy } from "../context";
+import { pastPapers } from '../content/past';
 
 type Item = { label: string; to: string; completed?: boolean };
 function current(to: string, path: string, search: string) {
@@ -18,6 +19,7 @@ export function SidebarNav() {
   const groups = [
     { id: "home", label: "홈", path: "/", Icon: House, items: [{label: "학습 대시보드", to: "/"}, {label: "학습 순서·시험 범위", to: "/guide"}, {label: "교재 연습문제 복습", to: "/textbook"}, {label: "자료·슬라이드 출처", to: "/sources"}] },
     { id: "lessons", label: "강의실", path: "/lessons", Icon: BookOpen, items: [{label: "전체 강의", to: "/lessons"}] },
+    { id: "past", label: "족보 문제집", path: "/past-exams", Icon: ClipboardList, items: [{label:'전체 문제집',to:'/past-exams'}, {label:'고유 문제 전체',to:'/past-exams?view=all'}, ...pastPapers.map(p=>({label:p.title,to:`/past-exams/${p.id}`})), {label:'검토·수정 기록',to:'/past-exams?view=review'}] },
     { id: "reading", label: "사례 자료", path: "/reading", Icon: ChartNoAxesCombined, items: [{label: "전체 자료", to: "/reading"}, {label: "표 중심 자료", to: "/reading?kind=table"}, {label: "흐름·메시지 자료", to: "/reading?kind=flow"}, {label: "코드 자료", to: "/reading?kind=code"}, ...cases.map((c) => ({label: `${c.id} · ${c.title}`, to: `/reading?case=${c.id}`}))] },
     { id: "cbt", label: "사례형 CBT", path: "/cbt", Icon: FlaskConical, items: [{label: "종합 연습 전체 회차", to: "/cbt"}, ...blueprints.map((b) => ({label: b.title, to: `/cbt/${b.id}`}))] },
     { id: "mock", label: "모의고사", path: "/mock", Icon: Timer, items: [{label: "종합모의고사 전체 회차", to: "/mock"}, ...blueprints.map((b) => ({label: b.title, to: `/mock/${b.id}`}))] },
@@ -27,7 +29,7 @@ export function SidebarNav() {
     { id: "account", label: "계정·백업", path: "/account", Icon: CircleUserRound, items: [{label: "로컬 로그인·프로필", to: "/account"}, {label: "로컬 회원가입", to: "/account?view=register"}, {label: "학습 기록 백업·복원", to: "/account?view=backup"}] },
   ];
   const active = ["/guide", "/textbook", "/sources"].includes(location.pathname) ? "home"
-    : location.pathname === "/quiz" ? (profile.draft?.mode === "exam" ? "mock" : "cbt")
+    : location.pathname === "/quiz" ? (profile.draft?.questionIds.some(id=>id.startsWith('PQ-')) ? 'past' : profile.draft?.mode === "exam" ? "mock" : "cbt")
     : location.pathname.startsWith("/results") ? "records"
     : location.pathname === "/practice" ? (location.search.includes("wrong=1") ? "wrong" : "records")
     : groups.find((g) => g.path !== "/" && location.pathname.startsWith(g.path))?.id ?? "home";

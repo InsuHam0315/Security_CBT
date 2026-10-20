@@ -1,4 +1,11 @@
-export type TopicId = "A" | "B" | "C" | "D";
+export type TopicId = "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H";
+export interface PastMeta {
+  status: "기출 복원" | "정리자료 재구성";
+  occurrences: { sourceId: string; locator: string }[];
+  correction?: string;
+  references: { title: string; url: string }[];
+  material?: { title: string; description: string; columns: string[]; rows: string[][] };
+}
 export interface Source {
   id: string;
   filename: string;
@@ -159,7 +166,8 @@ export interface Question {
   commonError: string;
   lessonId: string;
   sources: SourceRef[];
-  origin: "직접 작성한 예상 연습문제";
+  origin: "직접 작성한 예상 연습문제" | "사용자 제공 기출 복습" | "사용자 정리 기반 재구성";
+  past?: PastMeta;
 }
 export interface ExamBlueprint {
   id: string;

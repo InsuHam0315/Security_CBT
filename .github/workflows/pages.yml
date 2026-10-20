@@ -36,6 +36,7 @@ jobs:
           done
           npm run test:browser
           npm run test:ime
+          npm run test:past
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
         with:

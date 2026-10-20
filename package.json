@@ -10,6 +10,7 @@
     "test": "vitest run",
     "test:browser": "node scripts/browser-check.mjs",
     "test:ime": "node scripts/ime-check.mjs",
+    "test:past": "node scripts/past-browser-check.mjs",
     "verify:content": "python scripts/verify_content.py",
     "validate": "tsx scripts/validate.ts"
   },

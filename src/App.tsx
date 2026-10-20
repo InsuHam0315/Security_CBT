@@ -58,6 +58,8 @@ import { QuizStart, FocusPracticeStart } from "./pages/QuizStart";
 import { SidebarNav } from "./components/SidebarNav";
 import { Guide } from "./pages/Guide";
 import { Textbook, SourceGuide } from "./pages/Textbook";
+import { PastExams } from './pages/PastExams';
+import { pastQuestions } from './content/past';
 import "./style.css";
 function Shell() {
   const {
@@ -229,6 +231,7 @@ function Shell() {
             <Route path="/guide" element={<Guide />} />
             <Route path="/textbook" element={<Textbook />} />
             <Route path="/sources" element={<SourceGuide />} />
+            <Route path="/past-exams/:paperId?" element={<PastExams key={location.pathname+location.search+session.userId}/>} />
             <Route path="/lessons/*" element={<Classroom />} />
             <Route
               path="/reading"
@@ -266,8 +269,8 @@ function Shell() {
           </Routes>
         </main>
         <footer>
-          직접 작성한 예상 연습문제 · 실제 시험 규격은 미확정{" "}
-          <span>강의 슬라이드는 공개 저장소에 포함하지 않습니다</span>
+          PPT 기반 예상문제 · 별도 족보 문제집은 출처·수정 여부 표시{" "}
+          <span>강의 슬라이드·족보 원본은 공개 저장소에 포함하지 않습니다</span>
         </footer>
       </div>
     </div>
@@ -363,6 +366,7 @@ function Home() {
           );
         })}
       </section>
+      <section className="panel past-home"><span className="eyebrow">REVIEWED PAST PAPERS</span><h2>족보 문제집 · {pastQuestions.length}개 고유 문제</h2><p>기출 복원과 교재 정리 기반 재구성을 구분하고, 잘못 적힌 답·불완전한 조건을 검토했습니다. 암호·보안 솔루션 등 1~4장 밖의 기말 내용도 포함합니다.</p><div className="actions"><Link className="button primary" to="/past-exams">족보 문제집 열기<ArrowRight size={16}/></Link><Link className="button" to="/past-exams?view=review">검토·수정 기록</Link></div></section>
       <section className="learning-flow">
         <div className="section-title">
           <h2>이렇게 공부해 보세요</h2>

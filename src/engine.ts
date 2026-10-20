@@ -9,7 +9,7 @@ import type {
   TopicId,
   ExamBlueprint,
 } from "./types";
-import { caseMap, cases, questionMap, questions, topics } from "./content";
+import { caseMap, allCases, questionMap, questions, allTopics } from "./content";
 export function roundQuestions(round: ExamBlueprint): string[] {
   return round.caseIds.flatMap((id) => caseMap[id].questionIds);
 }
@@ -124,7 +124,7 @@ export function selectQuestions({
 }): { ids: string[]; available: number } {
   if (!pool.length) return { ids: [], available: 0 };
   const allowed = new Set(pool.map((q) => q.id));
-  const groups = cases.filter((c) =>
+  const groups = allCases.filter((c) =>
     c.questionIds.some((id) => allowed.has(id)),
   );
   const ordered = random
@@ -136,7 +136,7 @@ export function selectQuestions({
       });
   const chosen: CaseStudy[] = [];
   // 범위에 존재하는 각 주제의 사례를 먼저 하나씩. 한 사례의 문항은 항상 연속.
-  for (const t of topics) {
+  for (const t of allTopics) {
     const c = ordered.find((c) => c.topic === t.id);
     if (c) chosen.push(c);
   }

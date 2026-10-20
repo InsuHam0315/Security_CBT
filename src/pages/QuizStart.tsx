@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, Navigate, useLocation, useNavigate, useParams } from "react-router-dom";
 import { ArrowRight, BookOpen, Timer } from "lucide-react";
-import { blueprints, caseMap, questionMap, questions, topics } from "../content";
+import { blueprints, caseMap, questionMap, questions, allQuestions, allTopics } from "../content";
 import { useStudy } from "../context";
 import { newDraft, roundQuestions, selectQuestions } from "../engine";
 import { updateProfile } from "../storage";
@@ -75,8 +75,9 @@ export function FocusPracticeStart() {
   const [starting, setStarting] = useState(false);
   let pool = questions;
   const cid = params.get("case"), qid = params.get("question");
-  const chapter = topics.find(t=>t.id===params.get("topic"));
+  const chapter = allTopics.find(t=>t.id===params.get("topic"));
   const bookmarks = params.get("bookmarks") === "1", wrong = params.get("wrong") === "1";
+  if (qid || cid || bookmarks || wrong || (chapter && !'ABCD'.includes(chapter.id))) pool = allQuestions;
   if (cid) pool = pool.filter((q) => q.caseId === cid);
   if (qid) pool = pool.filter((q) => q.id === qid);
   if (chapter) pool = pool.filter(q=>q.topic===chapter.id);
@@ -100,7 +101,7 @@ export function FocusPracticeStart() {
       {cid && caseMap[cid] && <p>{caseMap[cid].title}</p>}
       {qid && questionMap[qid] && <p>{questionMap[qid].stem}</p>}
       <p>{ids.length ? "문항별 답안 확인으로 해설을 읽고, 전체 제출하면 복습 결과가 기록됩니다." : "복습할 문제가 없습니다. 강의·문제에서 북마크하거나 종합 회차를 먼저 풀어 보세요."}</p>
-      <div className="actions"><button className="primary" disabled={!ids.length || starting} onClick={() => void start()}>복습 시작<ArrowRight size={16} /></button><Link className="button" to="/cbt">종합 회차 선택</Link>{cid && caseMap[cid] && <Link className="button" to={`/lessons/${caseMap[cid].lessonId}`}><BookOpen size={16} />연결 강의</Link>}</div>
+      <div className="actions"><button className="primary" disabled={!ids.length || starting} onClick={() => void start()}>복습 시작<ArrowRight size={16} /></button><Link className="button" to="/cbt">종합 회차 선택</Link>{pool.some(q=>q.past)&&<Link className="button" to="/past-exams">족보 문제집</Link>}{cid && caseMap[cid]?.lessonId && <Link className="button" to={`/lessons/${caseMap[cid].lessonId}`}><BookOpen size={16} />연결 강의</Link>}</div>
     </section>
   </>;
 }

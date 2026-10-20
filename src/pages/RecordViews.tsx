@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ArrowRight, BookOpen } from "lucide-react";
-import { cases, lessons, lessonMap, questionMap, topics } from "../content";
+import { cases, allCases, lessons, lessonMap, questionMap, allTopics as topics } from "../content";
 import { useStudy } from "../context";
 import { topicStats } from "../engine";
 import { updateProfile } from "../storage";
@@ -9,6 +9,7 @@ import { Heading, BookmarkButton } from "../components/UI";
 import { DataChart } from "../components/Chart";
 import { Materials } from "../components/Materials";
 import { Explanation, answerText } from "./Quiz";
+import { PastMaterial } from '../components/PastQuestion';
 
 const date = (s: string) => new Date(s).toLocaleString("ko-KR", {timeZone: "Asia/Seoul", month: "numeric", day: "numeric", hour: "2-digit", minute: "2-digit"});
 const views = {overview: "학습기록", progress: "강의별 진도", attempts: "응시 이력·점수", weakness: "취약점 분석", bookmarks: "내 북마크"};
@@ -58,8 +59,8 @@ export function WrongNotes() {
     <div className="actions"><Link className="button" to="/wrong">복습할 오답</Link><Link className="button" to="/wrong?view=all">모든 오답</Link><Link className="button" to="/wrong?view=resolved">해결한 오답</Link><Link className="button" to="/wrong?view=repeat">반복 오답</Link><Link className="button primary" to="/practice?wrong=1">오답 다시 풀기</Link></div>
     <div className="filters"><label>오답 검색<input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="문제 ID·내용 검색" /></label><label>주제<select value={topic} onChange={(e) => setTopic(e.target.value)}><option value="">모든 주제</option>{topics.map((t) => <option key={t.id} value={t.id}>{t.title}</option>)}</select></label><label>실수 유형<select value={mistake} onChange={(e) => setMistake(e.target.value)}><option value="">모든 유형</option>{["계산", "단위", "코드", "개념", "과도한 해석"].map((m) => <option key={m}>{m}</option>)}</select></label><label>해결 상태<select value={status} onChange={(e) => setStatus(e.target.value)}><option value="unresolved">복습 필요</option><option value="resolved">해결한 문제</option><option value="all">모두 보기</option></select></label></div>
     {visible.map((w) => {
-      const q = questionMap[w.questionId], data = cases.find((c) => c.id === q.caseId)!;
-      return <article className="panel wrong-card" key={w.questionId}><div className="question-top"><div className="tags"><span className="tag">{q.id}</span><span className="tag">{q.mistake}</span><span className="tag">오답 {w.count}회</span><span className="tag">{w.resolved ? "✓ 해결" : "복습 필요"}</span></div><BookmarkButton targetId={q.id} kind="question" /></div><h2>{q.stem}</h2><p>최근 오답: {answerText(q, w.answer)} · {date(w.updatedAt)}</p><details><summary>사례 자료와 해설 펼치기</summary><Materials data={data} /><Explanation q={q} answer={w.answer} /></details><div className="actions"><Link className="button primary" to={`/practice?question=${q.id}`}>재풀이<ArrowRight size={15} /></Link><Link className="button" to={`/lessons/${q.lessonId}`}><BookOpen size={16} />연결 강의</Link><button onClick={() => void run(updateProfile(session.userId, (p) => {const n = p.wrongNotes.find((n) => n.questionId === q.id); if (n) {n.resolved = !n.resolved; n.updatedAt = new Date().toISOString();}}))}>{w.resolved ? "복습 필요로 표시" : "해결 표시"}</button></div></article>;
+      const q = questionMap[w.questionId], data = allCases.find((c) => c.id === q.caseId)!;
+      return <article className="panel wrong-card" key={w.questionId}><div className="question-top"><div className="tags"><span className="tag">{q.id}</span><span className="tag">{q.mistake}</span><span className="tag">오답 {w.count}회</span><span className="tag">{w.resolved ? "✓ 해결" : "복습 필요"}</span></div><BookmarkButton targetId={q.id} kind="question" /></div><h2>{q.stem}</h2><p>최근 오답: {answerText(q, w.answer)} · {date(w.updatedAt)}</p><details><summary>사례 자료와 해설 펼치기</summary>{q.past ? <PastMaterial q={q}/> : <Materials data={data} />}<Explanation q={q} answer={w.answer} /></details><div className="actions"><Link className="button primary" to={`/practice?question=${q.id}`}>재풀이<ArrowRight size={15} /></Link>{q.lessonId && <Link className="button" to={`/lessons/${q.lessonId}`}><BookOpen size={16} />연결 강의</Link>}<button onClick={() => void run(updateProfile(session.userId, (p) => {const n = p.wrongNotes.find((n) => n.questionId === q.id); if (n) {n.resolved = !n.resolved; n.updatedAt = new Date().toISOString();}}))}>{w.resolved ? "복습 필요로 표시" : "해결 표시"}</button></div></article>;
     })}
     {!visible.length && <div className="empty panel"><h2>이 조건의 오답이 없습니다.</h2><p>{profile.wrongNotes.length ? "해결 상태나 검색 조건을 바꿔 확인하세요." : "제출한 풀이의 오답이 여기에 모입니다."}</p><Link className="button primary" to="/cbt">종합 회차 연습</Link></div>}
   </>;
